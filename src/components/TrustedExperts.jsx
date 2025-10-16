@@ -26,7 +26,7 @@ export default function TrustedExperts() {
     {
       name: 'Mark Adam',
       title: 'Chartered Accountant',
-      image: '', // Placeholder for your image asset
+      image: '/assets/Adam.png', // Image asset for Mark Adam
       bgColor: 'bg-[#FDEBEA]',
       badgeColor: 'bg-[#F27A7A]',
       textColor: 'text-[#D95B5B]',
@@ -38,7 +38,7 @@ export default function TrustedExperts() {
     {
       name: 'Ms. Smitha',
       title: 'Financial Planner',
-      image: '',
+      image: '/assets/Smitha.png',
       bgColor: 'bg-[#EAF6F0]',
       badgeColor: 'bg-[#6CC19A]',
       textColor: 'text-[#4A9D7C]',
@@ -50,7 +50,7 @@ export default function TrustedExperts() {
     {
       name: 'Dr. Einstein',
       title: 'Financial Coach',
-      image: '',
+      image: '/assets/Einstein.png',
       bgColor: 'bg-[#FFF3E5]',
       badgeColor: 'bg-[#F5A623]',
       textColor: 'text-[#D98200]',
@@ -62,7 +62,7 @@ export default function TrustedExperts() {
     {
       name: 'Priya Sharma',
       title: 'Chartered Accountant',
-      image: '',
+      image: '/assets/Priya.png',
       bgColor: 'bg-[#E9EFFF]',
       badgeColor: 'bg-[#4A72FF]',
       textColor: 'text-[#3B5AD9]',
