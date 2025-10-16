@@ -30,28 +30,38 @@ export default function App() {
         <WhatMakesUsDifferent />
         
         {/* About */}
-        <About />
+        <div id="about">
+          <About />
+        </div>
         
         {/* Stats */}
         <TrustStats />
         
         {/* Additional Features Section */}
-        <ProductCapabilities />
+        <div id="what-we-do">
+          <ProductCapabilities />
+        </div>
         
         {/* Know your money */}
         <KnowYourMoney />
         
         {/* How it works Section */}
-        <HowKoshpalWorks />
+        <div id="how-it-works">
+          <HowKoshpalWorks />
+        </div>
         
         {/* Cards Section */}
         <CardsSection />
         
         {/* Form Section */}
-        <ContactForm />
+        <div id="contact">
+          <ContactForm />
+        </div>
         
         {/* Article Section */}
-        <ExploreArticles />
+        <div id="resources">
+          <ExploreArticles />
+        </div>
       </main>
       
       {/* footer */}
