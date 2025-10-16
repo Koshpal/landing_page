@@ -11,7 +11,7 @@ export default function Footer() {
             Break free from manual <br />
             time tracking
           </h2>
-          <button className="px-8 py-4 bg-primary rounded-[100px] shadow-[0px_0px_2px_0px_rgba(0,71,179,1.00)] border-2 border-primary-lightest flex justify-center items-center gap-2 hover:bg-primary-darkest transition-colors">
+          <button className="px-8 py-4 bg-primary rounded-[100px] shadow-[0px_0px_2px_0px_rgba(0,71,179,1.00)] border-2 border-primary-lightest flex justify-center items-center gap-2 hover:bg-primary-darkest hover:scale-105 hover:shadow-[0px_8px_24px_0px_rgba(51,78,172,0.4)] transition-all duration-300 ease-in-out active:scale-95">
             <span className="text-center text-white-darkest text-2xl font-medium font-outfit">
               Request a Demo
             </span>
@@ -21,43 +21,43 @@ export default function Footer() {
         {/* Right: Contact Info */}
         <div className="w-96 flex flex-col justify-start items-start gap-4">
           {/* Email */}
-          <div className="self-stretch flex justify-start items-center gap-2.5">
-            <div className="w-12 h-12 p-3.5 bg-blue-500 rounded-[10px] flex justify-center items-center gap-2.5 overflow-hidden">
+          <div className="self-stretch flex justify-start items-center gap-2.5 group cursor-pointer">
+            <div className="w-12 h-12 p-3.5 bg-blue-500 rounded-[10px] flex justify-center items-center gap-2.5 overflow-hidden transition-all duration-300 group-hover:bg-primary group-hover:scale-110 group-hover:shadow-lg">
               <img
                 src="/assets/material-symbols_mail.svg"
                 alt="Email"
                 className="w-7 h-7"
               />
             </div>
-            <span className="flex-1 text-[#1a1a1a] text-2xl font-normal font-outfit">
+            <span className="flex-1 text-[#1a1a1a] text-2xl font-normal font-outfit transition-colors group-hover:text-primary">
               koshpal.official@gmail.com
             </span>
           </div>
 
           {/* LinkedIn */}
-          <div className="self-stretch flex justify-start items-center gap-2.5">
-            <div className="w-12 h-12 p-3.5 bg-blue-500 rounded-[10px] flex justify-center items-center overflow-hidden">
+          <div className="self-stretch flex justify-start items-center gap-2.5 group cursor-pointer">
+            <div className="w-12 h-12 p-3.5 bg-blue-500 rounded-[10px] flex justify-center items-center overflow-hidden transition-all duration-300 group-hover:bg-primary group-hover:scale-110 group-hover:shadow-lg">
               <img
                 src="/assets/ri_linkedin-fill.svg"
                 alt="LinkedIn"
                 className="w-7 h-7"
               />
             </div>
-            <span className="flex-1 text-[#1a1a1a] text-2xl font-normal font-outfit">
+            <span className="flex-1 text-[#1a1a1a] text-2xl font-normal font-outfit transition-colors group-hover:text-primary">
               Linkedin
             </span>
           </div>
 
           {/* Phone */}
-          <div className="self-stretch flex justify-start items-center gap-2.5">
-            <div className="w-12 h-12 p-3.5 bg-blue-500 rounded-[10px] flex justify-center items-center gap-2.5 overflow-hidden">
+          <div className="self-stretch flex justify-start items-center gap-2.5 group cursor-pointer">
+            <div className="w-12 h-12 p-3.5 bg-blue-500 rounded-[10px] flex justify-center items-center gap-2.5 overflow-hidden transition-all duration-300 group-hover:bg-primary group-hover:scale-110 group-hover:shadow-lg">
               <img
                 src="/assets/bxs_phone.svg"
                 alt="Phone"
                 className="w-7 h-7"
               />
             </div>
-            <span className="flex-1 text-[#1a1a1a] text-2xl font-normal font-outfit opacity-95">
+            <span className="flex-1 text-[#1a1a1a] text-2xl font-normal font-outfit opacity-95 transition-colors group-hover:text-primary group-hover:opacity-100">
               +91 9983444740
             </span>
           </div>
@@ -79,7 +79,7 @@ export default function Footer() {
                 <a
                   key={link}
                   href="#"
-                  className="text-white-darkest text-xl font-normal font-jakarta tracking-tight hover:opacity-80 transition"
+                  className="text-white-darkest text-xl font-normal font-jakarta tracking-tight hover:scale-110 hover:text-primary-lightest transition-all duration-300 ease-in-out"
                 >
                   {link}
                 </a>
