@@ -29,7 +29,7 @@ export default function Navbar(){
           </div>
 
           {/* center: nav links (desktop) */}
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-10 text-black-light font-outfit font-bold px-4 xl:px-6 py-2.5 text-sm xl:text-base">
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-10 text-black-light font-jakarta font-bold px-4 xl:px-6 py-2.5 text-sm xl:text-base">
             <a href="#about" onClick={(e) => { e.preventDefault(); smoothScrollTo('about'); }} className="hover:text-primary transition cursor-pointer whitespace-nowrap">About</a>
             <a href="#what-we-do" onClick={(e) => { e.preventDefault(); smoothScrollTo('what-we-do'); }} className="hover:text-primary transition cursor-pointer whitespace-nowrap">What we do</a>
             <a href="#how-it-works" onClick={(e) => { e.preventDefault(); smoothScrollTo('how-it-works'); }} className="hover:text-primary transition cursor-pointer whitespace-nowrap">How it works</a>
@@ -73,7 +73,7 @@ export default function Navbar(){
             <a className="block font-jakarta font-medium text-base hover:text-primary transition cursor-pointer py-2 touch-manipulation" href="#how-it-works" onClick={(e) => { e.preventDefault(); smoothScrollTo('how-it-works'); }}>How it works</a>
             <a className="block font-jakarta font-medium text-base hover:text-primary transition cursor-pointer py-2 touch-manipulation" href="#resources" onClick={(e) => { e.preventDefault(); smoothScrollTo('resources'); }}>Resources</a>
             <div className="pt-3">
-              <button onClick={(e) => { e.preventDefault(); smoothScrollTo('contact'); }} className="w-full bg-primary text-white font-jakarta font-semibold px-4 py-3 text-base rounded-full hover:bg-primary-darkest transition-all cursor-pointer touch-manipulation">
+              <button onClick={(e) => { e.preventDefault(); smoothScrollTo('contact'); }} className="w-full bg-primary text-white font-jakarta font-semibold px-4 py-3 text-base rounded-full hover:bg-primary-darkest transition-all cursor-pointer touch-manipulation" style={{ color: '#FFFFFF' }}>
                 Request a Demo
               </button>
             </div>
