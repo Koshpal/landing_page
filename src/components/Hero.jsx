@@ -130,7 +130,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative overflow-hidden h-screen flex items-center pt-24"
+      className="relative overflow-hidden min-h-screen flex items-center pt-16 sm:pt-20 md:pt-24"
       aria-labelledby="hero-heading"
       onMouseMove={handleMouseMove}
       style={{ 
@@ -147,31 +147,32 @@ export default function Hero() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12 md:py-16 relative w-full h-full flex items-center" style={{ zIndex: 2 }}>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-12 sm:py-16 md:py-20 lg:py-24 relative w-full flex items-center" style={{ zIndex: 2 }}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center w-full">
           {/* LEFT: Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="space-y-4 sm:space-y-6 lg:pr-8"
+            className="space-y-5 sm:space-y-6 md:space-y-7 lg:pr-8 text-center lg:text-left"
           >
             <motion.h1
               id="hero-heading"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="font-outfit text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.15] tracking-tight text-left"
+              className="font-outfit text-white text-[28px] leading-[1.2] sm:text-4xl sm:leading-[1.15] md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight"
               style={{ letterSpacing: '-0.02em', color: 'white' }}
             >
-              Empower Your Team's Financial Wellness
+              <span className="block">Empower Your Team's</span>
+              <span className="block">Financial Wellness</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="font-jakarta text-white text-sm sm:text-base lg:text-lg max-w-[540px] leading-[1.65] text-left"
+              className="font-jakarta text-white text-base sm:text-lg md:text-xl lg:text-lg max-w-[540px] leading-[1.6] sm:leading-[1.65] mx-auto lg:mx-0"
               style={{ color: 'white' }}
             >
               Koshpal delivers privacy-first, automated expense tracking and actionable insights, designed to boost productivity and financial clarity for your workforce.
@@ -181,23 +182,23 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="pt-2 sm:pt-4"
+              className="pt-3 sm:pt-4 md:pt-5 flex justify-center lg:justify-start"
             >
               <motion.button
                 onClick={smoothScrollToContact}
                 whileHover={{ scale: 1.05, backgroundColor: '#ffffff', color: '#334eac' }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-2 sm:gap-3 bg-transparent border-2 border-white text-white rounded-full px-5 sm:px-7 py-2.5 sm:py-3.5 font-jakarta font-semibold text-sm sm:text-[15px] focus:outline-none focus:ring-4 focus:ring-white/30 transition-colors duration-300 shadow-lg"
+                className="inline-flex items-center gap-2 sm:gap-3 bg-transparent border-2 border-white text-white rounded-full px-6 sm:px-7 md:px-8 py-3 sm:py-3.5 md:py-4 font-jakarta font-semibold text-base sm:text-[15px] md:text-base focus:outline-none focus:ring-4 focus:ring-white/30 transition-colors duration-300 shadow-lg touch-manipulation"
                 aria-label="Book a Demo"
                 style={{ color: 'white' }}
               >
                 <motion.svg
-                  width="16"
-                  height="16"
+                  width="18"
+                  height="18"
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="shrink-0 sm:w-[18px] sm:h-[18px]"
+                  className="shrink-0 w-[18px] h-[18px] sm:w-5 sm:h-5"
                   aria-hidden="true"
                   animate={{ rotate: [0, 5, -5, 0] }}
                   transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
@@ -215,7 +216,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex justify-center lg:justify-end"
+            className="flex justify-center lg:justify-end mt-8 lg:mt-0"
           >
             <div className="relative">
               {/* Phone Frame with Enhanced Shadow and Continuous Float Animation */}
@@ -234,7 +235,7 @@ export default function Hero() {
                 <motion.img
                   src="/assets/phone-mock.png"
                   alt="Koshpal App Preview"
-                  className="w-[200px] sm:w-[240px] md:w-[280px] lg:w-[300px] xl:w-[320px]"
+                  className="w-[220px] sm:w-[260px] md:w-[280px] lg:w-[300px] xl:w-[320px]"
                   style={{
                     filter: 'drop-shadow(0 30px 60px rgba(0, 0, 0, 0.35)) drop-shadow(0 15px 35px rgba(0, 0, 0, 0.25))'
                   }}
