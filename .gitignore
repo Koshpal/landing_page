@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-node_modules
-=======
 # Logs
 logs
 *.log
@@ -44,4 +41,3 @@ coverage
 # Misc
 .turbo
 *.tsbuildinfo
->>>>>>> bc0ae54 (sankalp)
