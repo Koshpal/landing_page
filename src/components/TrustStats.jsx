@@ -2,64 +2,69 @@ import React from "react";
 
 export default function TrustStats() {
   return (
-    <section className="bg-white py-16 px-6 md:px-12 lg:px-24">
+    <section className="w-full bg-[#fafafa] flex flex-col items-center justify-center py-[90px] px-[120px] gap-12 text-center">
       {/* Intro paragraph */}
-      <div className="mx-auto max-w-4xl text-center mb-16">
-        <p className="font-jakarta text-black-light text-base md:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed">
-          Unlock invaluable wisdom personalized for you in our top-notch podcast. Dive into
-          episodes designed to deliver relevant insights that cater to your interests and needs.
-        </p>
+      <div className="w-full max-w-[1200px] text-[20px] leading-[140%] font-semibold font-jakarta text-[#383838]">
+        Unlock invaluable wisdom personalized for you in our top-notch podcast.
+        Dive into episodes designed to deliver relevant insights that cater to
+        your interests and needs.
       </div>
 
-      {/* Main grid: Image + Stats */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
-        {/* Left: Single full image */}
-        <div className="relative">
-          <div className="rounded-3xl overflow-hidden shadow-lg">
-            <img
-              src="/assets/Session.png"
-              alt="Professional coaching session"
-              className="w-full h-auto object-cover"
-              style={{ minHeight: 480 }}
+      {/* Main container: Video + Stats */}
+      <div className="w-full max-w-[1203px] flex items-center justify-between gap-5 text-left">
+        {/* Left: Video */}
+        <div className="w-[827px] h-[514px] rounded-2xl border border-[#cfd0d1] overflow-hidden">
+          <video
+            className="w-full h-full object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source
+              src="/4836232_Laptop_Credit_1920x1080.mp4"
+              type="video/mp4"
             />
-          </div>
+            Your browser does not support the video tag.
+          </video>
         </div>
 
         {/* Right: Stats column */}
-        <div className="flex flex-col gap-10 justify-center">
+        <div className="w-[301px] flex flex-col items-start gap-[13px]">
           {/* Stat 1 */}
-          <div className="w-full">
-            <div className="font-outfit text-[64px] md:text-[76px] lg:text-[88px] font-extrabold text-secondary leading-none">
+          <div className="w-full flex flex-col items-center gap-2">
+            <div className="text-[94px] leading-[110%] font-extrabold text-[#17a2b8] font-['Red_Hat_Display']">
               10+
             </div>
-            <div className="mt-3 font-jakarta text-base md:text-lg text-grey-dark">
+            <div className="text-[18px] leading-[160%] font-semibold font-jakarta text-[#383838]">
               qualified coaches onboard
             </div>
           </div>
 
-          <hr className="w-full border-t-2 border-grey-lightest" />
+          {/* Divider */}
+          <div className="w-full h-[1px] bg-[rgba(0,0,0,0.1)]"></div>
 
           {/* Stat 2 */}
-          <div className="w-full">
-            <div className="font-outfit text-[64px] md:text-[76px] lg:text-[88px] font-extrabold text-secondary leading-none">
+          <div className="w-full flex flex-col items-center gap-2">
+            <div className="text-[94px] leading-[110%] font-extrabold text-[#17a2b8] font-['Red_Hat_Display']">
               12+
             </div>
-            <div className="mt-3 font-jakarta text-base md:text-lg text-grey-dark">
+            <div className="text-[20px] leading-[160%] font-semibold font-jakarta text-[#383838] text-center">
               industries consulted
             </div>
           </div>
 
-          <hr className="w-full border-t-2 border-grey-lightest" />
+          {/* Divider */}
+          <div className="w-full h-[1px] bg-[rgba(0,0,0,0.1)]"></div>
 
           {/* Stat 3 */}
-          <div className="w-full">
-            <div className="font-outfit text-[64px] md:text-[76px] lg:text-[88px] font-extrabold text-secondary leading-none">
-              236+
+          <div className="w-full flex flex-col items-center gap-2">
+            <div className="text-[94px] leading-[110%] font-medium text-[#17a2b8] font-outfit">
+              236
             </div>
-            <div className="mt-3 font-jakarta text-base md:text-lg text-grey-dark">
-              coaching hours delivered
-              <br />
-              in pilot phase
+            <div className="text-[20px] leading-[160%] font-semibold font-jakarta text-[#383838] text-center">
+              <p className="m-0">coaching hours delivered</p>
+              <p className="m-0">in pilot phase</p>
             </div>
           </div>
         </div>
