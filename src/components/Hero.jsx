@@ -164,8 +164,8 @@ export default function Hero() {
               className="font-outfit text-white text-[28px] leading-[1.2] sm:text-4xl sm:leading-[1.15] md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight"
               style={{ letterSpacing: '-0.02em', color: 'white' }}
             >
-              <span className="block">Empower Your Team's</span>
-              <span className="block">Financial Wellness</span>
+              <span className="block whitespace-nowrap">Empower Your Team's</span>
+              <span className="block whitespace-nowrap">Financial Wellness</span>
             </motion.h1>
 
             <motion.p

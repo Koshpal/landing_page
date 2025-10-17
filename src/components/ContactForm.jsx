@@ -14,7 +14,7 @@ export default function ContactForm() {
             
             <div className="text-white">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                Explore endless possibilities with FinanceFlow
+                Explore endless possibilities with Koshpal
               </h1>
 
               <p className="text-lg lg:text-xl text-white/90 mb-8 leading-relaxed">
@@ -23,7 +23,11 @@ export default function ContactForm() {
               </p>
 
               <button
-                className="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300 text-lg"
+                onClick={() => {
+                  const el = document.getElementById('contact');
+                  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
+                className="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300 text-lg cursor-pointer"
               >
                 Request a Demo
               </button>

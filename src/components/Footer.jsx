@@ -8,10 +8,16 @@ export default function Footer() {
         {/* Left: CTA Section */}
         <div className="flex flex-col justify-start items-start gap-4 md:gap-6 w-full lg:w-auto">
           <h2 className="text-[#262626] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium font-outfit leading-tight sm:leading-snug md:leading-[68px] lg:leading-[78px] tracking-wide md:tracking-wider">
-            Break free from manual <br className="hidden sm:block" />
-            time tracking
+            Empower Your Team's <br className="hidden sm:block" />
+            Financial Wellness
           </h2>
-          <button className="px-6 sm:px-8 py-3 sm:py-4 bg-primary rounded-[100px] shadow-[0px_0px_2px_0px_rgba(0,71,179,1.00)] border-2 border-primary-lightest flex justify-center items-center gap-2 hover:bg-primary-darkest hover:scale-105 hover:shadow-[0px_8px_24px_0px_rgba(51,78,172,0.4)] transition-all duration-300 ease-in-out active:scale-95">
+          <button 
+            onClick={() => {
+              const el = document.getElementById('contact');
+              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }}
+            className="px-6 sm:px-8 py-3 sm:py-4 bg-primary rounded-[100px] shadow-[0px_0px_2px_0px_rgba(0,71,179,1.00)] border-2 border-primary-lightest flex justify-center items-center gap-2 hover:bg-primary-darkest hover:scale-105 hover:shadow-[0px_8px_24px_0px_rgba(51,78,172,0.4)] transition-all duration-300 ease-in-out active:scale-95 cursor-pointer"
+          >
             <span className="text-center text-white-darkest text-lg sm:text-xl md:text-2xl font-medium font-outfit">
               Request a Demo
             </span>
@@ -21,7 +27,7 @@ export default function Footer() {
         {/* Right: Contact Info */}
         <div className="w-full lg:w-96 flex flex-col justify-start items-start gap-3 md:gap-4">
           {/* Email */}
-          <div className="self-stretch flex justify-start items-center gap-2.5 group cursor-pointer">
+          <a href="mailto:koshpal@koshpal.com" className="self-stretch flex justify-start items-center gap-2.5 group cursor-pointer">
             <div className="w-10 h-10 sm:w-12 sm:h-12 p-2.5 sm:p-3.5 bg-blue-500 rounded-[10px] flex justify-center items-center gap-2.5 overflow-hidden transition-all duration-300 group-hover:bg-primary group-hover:scale-110 group-hover:shadow-lg flex-shrink-0">
               <img
                 src="/assets/material-symbols_mail.svg"
@@ -30,12 +36,12 @@ export default function Footer() {
               />
             </div>
             <span className="flex-1 text-[#1a1a1a] text-base sm:text-lg md:text-xl lg:text-2xl font-normal font-outfit transition-colors group-hover:text-primary break-all sm:break-normal">
-              koshpal.official@gmail.com
+              koshpal@koshpal.com
             </span>
-          </div>
+          </a>
 
           {/* LinkedIn */}
-          <div className="self-stretch flex justify-start items-center gap-2.5 group cursor-pointer">
+          <a href="https://www.linkedin.com/company/koshpal" target="_blank" rel="noopener noreferrer" className="self-stretch flex justify-start items-center gap-2.5 group cursor-pointer">
             <div className="w-10 h-10 sm:w-12 sm:h-12 p-2.5 sm:p-3.5 bg-blue-500 rounded-[10px] flex justify-center items-center overflow-hidden transition-all duration-300 group-hover:bg-primary group-hover:scale-110 group-hover:shadow-lg flex-shrink-0">
               <img
                 src="/assets/ri_linkedin-fill.svg"
@@ -46,10 +52,10 @@ export default function Footer() {
             <span className="flex-1 text-[#1a1a1a] text-base sm:text-lg md:text-xl lg:text-2xl font-normal font-outfit transition-colors group-hover:text-primary">
               Linkedin
             </span>
-          </div>
+          </a>
 
           {/* Phone */}
-          <div className="self-stretch flex justify-start items-center gap-2.5 group cursor-pointer">
+          <a className="self-stretch flex justify-start items-center gap-2.5 group cursor-pointer">
             <div className="w-10 h-10 sm:w-12 sm:h-12 p-2.5 sm:p-3.5 bg-blue-500 rounded-[10px] flex justify-center items-center gap-2.5 overflow-hidden transition-all duration-300 group-hover:bg-primary group-hover:scale-110 group-hover:shadow-lg flex-shrink-0">
               <img
                 src="/assets/bxs_phone.svg"
@@ -60,7 +66,7 @@ export default function Footer() {
             <span className="flex-1 text-[#1a1a1a] text-base sm:text-lg md:text-xl lg:text-2xl font-normal font-outfit opacity-95 transition-colors group-hover:text-primary group-hover:opacity-100">
               +91 9983444740
             </span>
-          </div>
+          </a>
         </div>
       </div>
 

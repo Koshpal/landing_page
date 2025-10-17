@@ -68,7 +68,7 @@ export default function ExpertsGrid() {
         </div>
 
         <div className="mt-12">
-          <button className="px-8 py-3 text-white bg-[#2743A8] hover:bg-[#1e3482] font-semibold rounded-full shadow-md transition">
+          <button className="px-8 py-3 text-white bg-[#2743A8] hover:bg-[#1e3482] font-semibold rounded-full shadow-md transition" style={{ color: '#FFFFFF' }}>
             View our Advisors
           </button>
         </div>
