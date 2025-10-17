@@ -7,19 +7,6 @@ export default function HowKoshpalWorks() {
         {/* Top Badge and Heading */}
         <div className="flex flex-col items-center justify-center gap-4 md:gap-6 mb-8 md:mb-12">
           {/* Let's Talk Badge */}
-          <div className="inline-flex shadow-[0px_0px_1px_rgba(44,58,114,0.05),0px_2px_6px_rgba(44,58,114,0.05),0px_10px_18px_rgba(58,76,146,0.1)] rounded-[20px] bg-[#EFF6FF] border border-[#EFF6FF] items-center py-2 px-3 gap-2">
-            <svg
-              className="w-5 h-5 md:w-6 md:h-6"
-              viewBox="0 0 24 24"
-              fill="#334EAC"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M17.707 12.293a.999.999 0 0 0-1.414 0l-1.594 1.594c-.739-.22-2.118-.72-2.992-1.594s-1.374-2.253-1.594-2.992l1.594-1.594a.999.999 0 0 0 0-1.414l-4-4a.999.999 0 0 0-1.414 0L3.581 5.005c-.38.38-.594.902-.586 1.435.023 1.424.4 6.37 4.298 10.268s8.844 4.274 10.269 4.298h.028c.528 0 1.027-.208 1.405-.586l2.712-2.712a.999.999 0 0 0 0-1.414l-4-4.001zm-.127 6.712c-1.248-.021-5.518-.356-8.873-3.712-3.366-3.366-3.692-7.651-3.712-8.874L7 4.414 9.586 7 8.293 8.293a1 1 0 0 0-.272.912c.024.115.611 2.842 2.271 4.502s4.387 2.247 4.502 2.271a.991.991 0 0 0 .912-.271L17 14.414 19.586 17l-2.006 2.005z" />
-            </svg>
-            <div className="font-medium text-[#334EAC] text-sm md:text-base lg:text-[18px] whitespace-nowrap">
-              Let's Talk
-            </div>
-          </div>
 
           {/* Title */}
           <h1 className="font-outfit text-3xl sm:text-4xl md:text-5xl lg:text-[56px] leading-tight md:leading-[1.2] lg:leading-[72px] font-semibold px-4">
