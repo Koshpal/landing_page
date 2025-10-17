@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 export default function ExploreArticles() {
+  const scrollRef = useRef(null);
+  const autoScrollRef = useRef(null);
+
   // Sample placeholder image - you can replace with your actual image path
   const articleImage = "/assets/phone-mock.png"; // Replace with Rectangle 10925 image
 
@@ -24,6 +27,59 @@ export default function ExploreArticles() {
       image: articleImage,
     },
   ];
+
+  // Auto-scroll functionality
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    const startAutoScroll = () => {
+      autoScrollRef.current = setInterval(() => {
+        if (scrollContainer) {
+          const maxScroll =
+            scrollContainer.scrollWidth - scrollContainer.clientWidth;
+          const currentScroll = scrollContainer.scrollLeft;
+
+          // Scroll by one card width (approximately)
+          const scrollAmount = scrollContainer.clientWidth * 0.85;
+
+          if (currentScroll >= maxScroll - 10) {
+            // Reset to beginning
+            scrollContainer.scrollTo({ left: 0, behavior: "smooth" });
+          } else {
+            // Scroll to next card
+            scrollContainer.scrollBy({
+              left: scrollAmount,
+              behavior: "smooth",
+            });
+          }
+        }
+      }, 3000); // Auto-scroll every 3 seconds
+    };
+
+    const stopAutoScroll = () => {
+      if (autoScrollRef.current) {
+        clearInterval(autoScrollRef.current);
+      }
+    };
+
+    // Start auto-scroll
+    startAutoScroll();
+
+    // Pause on hover/touch
+    scrollContainer.addEventListener("mouseenter", stopAutoScroll);
+    scrollContainer.addEventListener("mouseleave", startAutoScroll);
+    scrollContainer.addEventListener("touchstart", stopAutoScroll);
+
+    return () => {
+      stopAutoScroll();
+      if (scrollContainer) {
+        scrollContainer.removeEventListener("mouseenter", stopAutoScroll);
+        scrollContainer.removeEventListener("mouseleave", startAutoScroll);
+        scrollContainer.removeEventListener("touchstart", stopAutoScroll);
+      }
+    };
+  }, []);
 
   return (
     <section className="w-full relative bg-[#FAFAFA] flex flex-col items-center py-10 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 gap-8 sm:gap-10 md:gap-12 text-center font-outfit">
@@ -67,42 +123,47 @@ export default function ExploreArticles() {
 
       {/* Articles Grid Container */}
       <div className="w-full max-w-[1200px] flex flex-col items-center gap-8 sm:gap-10 md:gap-12 text-xs text-[#334EAC]">
-        {/* Articles Grid */}
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-[14px] place-items-center">
-          {articles.map((article) => (
-            <div
-              key={article.id}
-              className="w-full max-w-[380px] shadow-[0.8px_1.2px_38px_rgba(0,0,0,0.15)] rounded-[20px] md:rounded-[24px] bg-[#EFF1F8] flex flex-col items-start p-4 sm:p-5 md:p-6 lg:p-8 gap-3 sm:gap-4 hover:shadow-[0px_8px_50px_rgba(51,78,172,0.25)] hover:scale-[1.02] hover:-translate-y-1 transition-all duration-300 ease-out cursor-pointer group"
-            >
-              {/* Article Image */}
-              <div className="w-full h-[180px] sm:h-[200px] md:h-[220px] relative rounded-[20px] md:rounded-[24px] overflow-hidden">
-                <img
-                  src={article.image}
-                  alt="Article thumbnail"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
-                />
-              </div>
+        {/* Articles Grid/Carousel - Horizontal scroll on mobile, grid on larger screens */}
+        <div
+          ref={scrollRef}
+          className="w-full overflow-x-auto sm:overflow-visible scrollbar-hide snap-x snap-mandatory sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-5 md:gap-6 lg:gap-[14px] sm:place-items-center"
+        >
+          <div className="flex sm:contents gap-4 pb-4 sm:pb-0 px-4 sm:px-0 -mx-4 sm:mx-0">
+            {articles.map((article) => (
+              <div
+                key={article.id}
+                className="flex-shrink-0 w-[85vw] sm:w-full sm:flex-shrink max-w-[380px] snap-center shadow-[0.8px_1.2px_38px_rgba(0,0,0,0.15)] rounded-[20px] md:rounded-[24px] bg-[#EFF1F8] flex flex-col items-start p-4 sm:p-5 md:p-6 lg:p-8 gap-3 sm:gap-4 hover:shadow-[0px_8px_50px_rgba(51,78,172,0.25)] sm:hover:scale-[1.02] sm:hover:-translate-y-1 sm:hover:z-10 transition-all duration-300 ease-out cursor-pointer group relative"
+              >
+                {/* Article Image */}
+                <div className="w-full h-[180px] sm:h-[200px] md:h-[220px] relative rounded-[20px] md:rounded-[24px] overflow-hidden">
+                  <img
+                    src={article.image}
+                    alt="Article thumbnail"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
+                  />
+                </div>
 
-              {/* Tags Container */}
-              <div className="w-full flex items-start flex-wrap gap-2 sm:gap-3 md:gap-4">
-                {article.tags.map((tag, idx) => (
-                  <div
-                    key={idx}
-                    className="rounded-[100px] border border-[#334EAC] flex items-center justify-center py-1 sm:py-1.5 md:py-2 px-2.5 sm:px-3 md:px-4 hover:bg-[#334EAC] hover:text-white transition-all duration-300"
-                  >
-                    <span className="relative text-[10px] sm:text-xs md:text-[12px]">
-                      {tag}
-                    </span>
-                  </div>
-                ))}
-              </div>
+                {/* Tags Container */}
+                <div className="w-full flex items-start flex-wrap gap-2 sm:gap-3 md:gap-4">
+                  {article.tags.map((tag, idx) => (
+                    <div
+                      key={idx}
+                      className="rounded-[100px] border border-[#334EAC] flex items-center justify-center py-1 sm:py-1.5 md:py-2 px-2.5 sm:px-3 md:px-4 hover:bg-[#334EAC] hover:text-white transition-all duration-300"
+                    >
+                      <span className="relative text-[10px] sm:text-xs md:text-[12px]">
+                        {tag}
+                      </span>
+                    </div>
+                  ))}
+                </div>
 
-              {/* Article Title */}
-              <h3 className="w-full relative text-lg sm:text-xl md:text-[22px] lg:text-[24px] leading-snug text-[#000] text-left font-normal group-hover:text-[#334EAC] transition-colors duration-300">
-                {article.title}
-              </h3>
-            </div>
-          ))}
+                {/* Article Title */}
+                <h3 className="w-full relative text-lg sm:text-xl md:text-[22px] lg:text-[24px] leading-snug text-[#000] text-left font-normal group-hover:text-[#334EAC] transition-colors duration-300">
+                  {article.title}
+                </h3>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Explore More Button */}

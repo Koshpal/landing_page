@@ -1,71 +1,71 @@
-import React from 'react'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import TrustedExperts from './components/TrustedExperts'
-import WhatMakesUsDifferent from './components/WhatMakesUsDifferent'
-import About from './components/About'
-import TrustStats from './components/TrustStats'
-import ProductCapabilities from './components/ProductCapabilities'
-import KnowYourMoney from './components/KnowYourMoney'
-import HowKoshpalWorks from './components/HowKoshpalWorks'
-import CardsSection from './components/CardsSection'
-import ContactForm from './components/ContactForm'
-import ExploreArticles from './components/ExploreArticles'
-import Footer from './components/Footer'
+import React from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import TrustedExperts from "./components/TrustedExperts";
+import WhatMakesUsDifferent from "./components/WhatMakesUsDifferent";
+import About from "./components/About";
+import TrustStats from "./components/TrustStats";
+import ProductCapabilities from "./components/ProductCapabilities";
+import KnowYourMoney from "./components/KnowYourMoney";
+import HowKoshpalWorks from "./components/HowKoshpalWorks";
+import CardsSection from "./components/CardsSection";
+import ContactForm from "./components/ContactForm";
+import ExploreArticles from "./components/ExploreArticles";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
     <div className="min-h-screen font-sans bg-white">
       {/* Navigation Bar Section */}
       <Navbar />
-      
+
       <main>
         {/* Hero Section */}
         <Hero />
-        
-        {/* Advisor Section */}
-        <TrustedExperts />
-        
+
         {/* What Makes Us Different? */}
         <WhatMakesUsDifferent />
-        
+
         {/* About */}
         <div id="about">
           <About />
         </div>
-        
+
         {/* Stats */}
         <TrustStats />
-        
+
         {/* Additional Features Section */}
         <div id="what-we-do">
           <ProductCapabilities />
         </div>
-        
+
         {/* Know your money */}
         <KnowYourMoney />
-        
+
+        {/* Advisor Section */}
+        <TrustedExperts />
+
         {/* How it works Section */}
         <div id="how-it-works">
           <HowKoshpalWorks />
         </div>
-        
+
         {/* Cards Section */}
         <CardsSection />
-        
+
         {/* Form Section */}
         <div id="contact">
           <ContactForm />
         </div>
-        
+
         {/* Article Section */}
         <div id="resources">
           <ExploreArticles />
         </div>
       </main>
-      
+
       {/* footer */}
       <Footer />
     </div>
-  )
+  );
 }
