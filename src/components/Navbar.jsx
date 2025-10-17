@@ -49,16 +49,16 @@ export default function Navbar(){
 
           {/* mobile menu button */}
           <button
-            className="lg:hidden text-black-light p-2 -mr-2 touch-manipulation"
+            className="lg:hidden text-black-light p-2 -mr-2 touch-manipulation transition-transform duration-300"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
             {open ? (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 transition-transform duration-300 rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
@@ -66,8 +66,9 @@ export default function Navbar(){
         </div>
 
         {/* mobile dropdown */}
-        {open && (
-          <div className="lg:hidden mt-3 bg-white/95 backdrop-blur-lg rounded-2xl p-5 text-black-light space-y-4 shadow-lg border border-grey-lightest animate-fadeIn">
+        <div className={`lg:hidden mt-3 bg-white/95 backdrop-blur-lg rounded-2xl text-black-light shadow-lg border border-grey-lightest transition-all duration-300 ease-in-out origin-top ${
+          open ? 'opacity-100 scale-y-100 max-h-96 p-5 space-y-4' : 'opacity-0 scale-y-0 max-h-0 p-0 border-0'
+        }`}>
             <a className="block font-jakarta font-medium text-base hover:text-primary transition cursor-pointer py-2 touch-manipulation" href="#about" onClick={(e) => { e.preventDefault(); smoothScrollTo('about'); }}>About</a>
             <a className="block font-jakarta font-medium text-base hover:text-primary transition cursor-pointer py-2 touch-manipulation" href="#what-we-do" onClick={(e) => { e.preventDefault(); smoothScrollTo('what-we-do'); }}>What we do</a>
             <a className="block font-jakarta font-medium text-base hover:text-primary transition cursor-pointer py-2 touch-manipulation" href="#how-it-works" onClick={(e) => { e.preventDefault(); smoothScrollTo('how-it-works'); }}>How it works</a>
@@ -77,8 +78,7 @@ export default function Navbar(){
                 Request a Demo
               </button>
             </div>
-          </div>
-        )}
+        </div>
       </div>
     </header>
   )
