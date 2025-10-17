@@ -93,7 +93,7 @@ export default function TrustStats() {
               end="10" 
               suffix="+" 
               duration={1200}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-[94px] leading-[110%] font-extrabold text-[#17a2b8] font-['Red_Hat_Display']"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-[94px] leading-[110%] font-extrabold text-[#17a2b8] font-outfit"
             />
             <div className="text-base sm:text-lg md:text-xl lg:text-[18px] leading-[160%] font-semibold font-jakarta text-[#383838]">
               qualified coaches onboard
@@ -109,7 +109,7 @@ export default function TrustStats() {
               end="12" 
               suffix="+" 
               duration={1200}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-[94px] leading-[110%] font-extrabold text-[#17a2b8] font-['Red_Hat_Display']"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-[94px] leading-[110%] font-extrabold text-[#17a2b8] font-outfit"
             />
             <div className="text-base sm:text-lg md:text-xl lg:text-[20px] leading-[160%] font-semibold font-jakarta text-[#383838] text-center">
               industries consulted

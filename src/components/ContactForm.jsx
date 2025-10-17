@@ -28,6 +28,7 @@ export default function ContactForm() {
                   if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }}
                 className="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300 text-lg cursor-pointer"
+                style={{ color: '#FFFFFF' }}
               >
                 Request a Demo
               </button>
