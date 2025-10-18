@@ -1,32 +1,62 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function ExploreArticles() {
   const scrollRef = useRef(null);
   const autoScrollRef = useRef(null);
-
-  // Sample placeholder image - you can replace with your actual image path
-  const articleImage = "/assets/phone-mock.png"; // Replace with Rectangle 10925 image
+  const [showAll, setShowAll] = useState(false);
 
   const articles = [
     {
       id: 1,
-      tags: ["Stocks", "Investment", "Funds"],
-      title: "8 Creative Ways to Repurpose Your Webinar Content",
-      image: articleImage,
+      tags: ["Budgeting", "Finance", "Planning"],
+      title: "How to Budget",
+      image:
+        "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=600&fit=crop",
+      url: "https://www.nerdwallet.com/article/finance/how-to-budget",
     },
     {
       id: 2,
-      tags: ["Stocks", "Investment", "Funds"],
-      title: "8 Creative Ways to Repurpose Your Webinar Content",
-      image: articleImage,
+      tags: ["Anxiety", "Wellness", "India"],
+      title: "Indian Financial Anxiety and Its Stress",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+      url: "https://timesofindia.indiatimes.com/readersblog/finance-excel/indian-financial-anxiety-and-its-stress-53203/",
     },
     {
       id: 3,
-      tags: ["Stocks", "Investment", "Funds"],
-      title: "8 Creative Ways to Repurpose Your Webinar Content",
-      image: articleImage,
+      tags: ["Consumer", "Confidence", "Economy"],
+      title: "How Financial Stress Impacts Consumer Confidence",
+      image:
+        "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&h=600&fit=crop",
+      url: "https://www.ideasforindia.in/topics/money-finance/how-financial-stress-impacts-consumer-confidence.html",
+    },
+    {
+      id: 4,
+      tags: ["Budgeting", "Strategy", "Tips"],
+      title: "Popular Budgeting Strategies",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+      url: "https://srfs.upenn.edu/financial-wellness/browse-topics/budgeting/popular-budgeting-strategies",
+    },
+    {
+      id: 5,
+      tags: ["Technology", "Apps", "Trends"],
+      title: "6 Emerging Trends in the Personal Finance App Market",
+      image:
+        "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop",
+      url: "https://interexy.com/6-emerging-trends-in-the-personal-finance-app-market",
+    },
+    {
+      id: 6,
+      tags: ["Apps", "Anxiety", "Solutions"],
+      title: "Financial Anxiety Spurs Demand for Consumer Budgeting Apps",
+      image:
+        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop",
+      url: "https://www.pymnts.com/personal-finance/2025/financial-anxiety-spurs-demand-for-consumer-budgeting-apps/",
     },
   ];
+
+  const displayedArticles = showAll ? articles : articles.slice(0, 3);
 
   // Auto-scroll functionality
   useEffect(() => {
@@ -129,16 +159,19 @@ export default function ExploreArticles() {
           className="w-full overflow-x-auto sm:overflow-visible scrollbar-hide snap-x snap-mandatory sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-5 md:gap-6 lg:gap-[14px] sm:place-items-center"
         >
           <div className="flex sm:contents gap-4 pb-4 sm:pb-0 px-4 sm:px-0 -mx-4 sm:mx-0">
-            {articles.map((article) => (
-              <div
+            {displayedArticles.map((article) => (
+              <a
                 key={article.id}
+                href={article.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex-shrink-0 w-[85vw] sm:w-full sm:flex-shrink max-w-[380px] snap-center shadow-[0.8px_1.2px_38px_rgba(0,0,0,0.15)] rounded-[20px] md:rounded-[24px] bg-[#EFF1F8] flex flex-col items-start p-4 sm:p-5 md:p-6 lg:p-8 gap-3 sm:gap-4 hover:shadow-[0px_8px_50px_rgba(51,78,172,0.25)] sm:hover:scale-[1.02] sm:hover:-translate-y-1 sm:hover:z-10 transition-all duration-300 ease-out cursor-pointer group relative"
               >
                 {/* Article Image */}
                 <div className="w-full h-[180px] sm:h-[200px] md:h-[220px] relative rounded-[20px] md:rounded-[24px] overflow-hidden">
                   <img
                     src={article.image}
-                    alt="Article thumbnail"
+                    alt={article.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
                   />
                 </div>
@@ -161,14 +194,17 @@ export default function ExploreArticles() {
                 <h3 className="w-full relative text-lg sm:text-xl md:text-[22px] lg:text-[24px] leading-snug text-[#000] text-left font-normal group-hover:text-[#334EAC] transition-colors duration-300">
                   {article.title}
                 </h3>
-              </div>
+              </a>
             ))}
           </div>
         </div>
 
         {/* Explore More Button */}
-        <button className="shadow-[0px_0px_8px_rgba(51,78,172,0.3)] rounded-[100px] bg-[#334EAC] border-2 border-[#334EAC] flex items-center justify-center py-2.5 sm:py-3 md:py-4 px-5 sm:px-6 md:px-8 text-base sm:text-lg md:text-xl lg:text-[24px] text-[#FFFFFF] font-medium hover:bg-[#2743A8] hover:border-[#2743A8] hover:shadow-[0px_0px_16px_rgba(51,78,172,0.5)] hover:scale-105 active:scale-95 transition-all duration-300">
-          Explore more
+        <button
+          onClick={() => setShowAll(!showAll)}
+          className="shadow-[0px_0px_8px_rgba(51,78,172,0.3)] rounded-[100px] bg-[#334EAC] border-2 border-[#334EAC] flex items-center justify-center py-2.5 sm:py-3 md:py-4 px-5 sm:px-6 md:px-8 text-base sm:text-lg md:text-xl lg:text-[24px] text-[#FFFFFF] font-medium hover:bg-[#2743A8] hover:border-[#2743A8] hover:shadow-[0px_0px_16px_rgba(51,78,172,0.5)] hover:scale-105 active:scale-95 transition-all duration-300"
+        >
+          {showAll ? "Show Less" : "Explore more"}
         </button>
       </div>
     </section>

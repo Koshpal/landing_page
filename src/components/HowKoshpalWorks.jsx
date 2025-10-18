@@ -22,9 +22,8 @@ export default function HowKoshpalWorks() {
           {/* Description */}
           <div className="flex items-center justify-center px-4 md:px-7">
             <p className="font-jakarta text-sm sm:text-base md:text-lg lg:text-[20px] font-semibold text-[#4A5565] max-w-[1200px]">
-              Manage your experience from start to finish, from integrations to
-              registration and from interactive stage elements to post-event
-              data, it's all here.
+              Manage your entire experience—from seamless integration to lasting
+              impact—all in one platform.
             </p>
           </div>
         </div>
@@ -34,7 +33,7 @@ export default function HowKoshpalWorks() {
           {/* Divider */}
           <div className="w-full h-[1px] bg-black/10" />
 
-          {/* Step 1: Create */}
+          {/* Step 1: Set Up Instantly */}
           <div className="w-full flex flex-col lg:flex-row items-center gap-6 md:gap-8 lg:gap-12">
             <div className="w-full lg:w-[576px] flex flex-col items-start gap-2 md:gap-3 lg:gap-3.5">
               <div className="font-outfit text-lg sm:text-xl md:text-2xl lg:text-[28px] font-medium text-black">
@@ -42,7 +41,7 @@ export default function HowKoshpalWorks() {
               </div>
               <div className="flex items-center gap-1 md:gap-2">
                 <div className="font-outfit text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-semibold text-[#334EAC]">
-                  Create
+                  Set Up Instantly
                 </div>
                 <svg
                   className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16"
@@ -59,8 +58,9 @@ export default function HowKoshpalWorks() {
                 </svg>
               </div>
               <p className="font-outfit text-sm sm:text-base md:text-lg lg:text-[20px] text-black">
-                Launch in one week: import SMS feeds, invite employees, set
-                budgets.
+                Go live in just one week. Import employee data, connect
+                payroll/SMS feeds, invite teams, and set smart financial
+                wellness budgets effortlessly.
               </p>
             </div>
             <div className="w-full lg:flex-1 h-[180px] sm:h-[200px] md:h-[220px] lg:h-[240px] rounded-[100px] sm:rounded-[200px] md:rounded-[300px] lg:rounded-[384px] overflow-hidden">
@@ -75,7 +75,7 @@ export default function HowKoshpalWorks() {
           {/* Divider */}
           <div className="w-full h-[1px] bg-black/10" />
 
-          {/* Step 2: Engage */}
+          {/* Step 2: Engage Every Employee */}
           <div className="w-full flex flex-col lg:flex-row-reverse items-center justify-center gap-6 md:gap-8 lg:gap-12">
             <div className="w-full lg:w-[576px] flex flex-col items-start gap-2 md:gap-3 lg:gap-3.5">
               <div className="font-outfit text-lg sm:text-xl md:text-2xl lg:text-[28px] font-medium text-black">
@@ -83,7 +83,7 @@ export default function HowKoshpalWorks() {
               </div>
               <div className="flex items-center gap-1 md:gap-2">
                 <div className="font-outfit text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-semibold text-[#334EAC]">
-                  Engage
+                  Engage Every Employee
                 </div>
                 <svg
                   className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16"
@@ -100,8 +100,9 @@ export default function HowKoshpalWorks() {
                 </svg>
               </div>
               <p className="font-outfit text-sm sm:text-base md:text-lg lg:text-[20px] text-black">
-                Employees book 1-to-1 sessions or join live workshops right
-                inside the app.
+                Employees can instantly book confidential 1-on-1 coaching or
+                participate in interactive group workshops, all within the
+                app—ensuring practical learning and support.
               </p>
             </div>
             <div className="w-full lg:flex-1 h-[180px] sm:h-[200px] md:h-[220px] lg:h-[240px] rounded-[100px] sm:rounded-[200px] md:rounded-[300px] lg:rounded-[384px] overflow-hidden">
@@ -116,7 +117,7 @@ export default function HowKoshpalWorks() {
           {/* Divider */}
           <div className="w-full h-[1px] bg-black/10" />
 
-          {/* Step 3: Analyze */}
+          {/* Step 3: Drive Measurable Impact */}
           <div className="w-full flex flex-col lg:flex-row items-center gap-6 md:gap-8 lg:gap-12">
             <div className="w-full lg:w-[576px] flex flex-col items-start gap-2 md:gap-3 lg:gap-3.5">
               <div className="font-outfit text-lg sm:text-xl md:text-2xl lg:text-[28px] font-medium text-black">
@@ -124,7 +125,7 @@ export default function HowKoshpalWorks() {
               </div>
               <div className="flex items-center gap-1 md:gap-2">
                 <div className="font-outfit text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-semibold text-[#334EAC]">
-                  Analyze
+                  Drive Measurable Impact
                 </div>
                 <svg
                   className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16"
@@ -141,8 +142,9 @@ export default function HowKoshpalWorks() {
                 </svg>
               </div>
               <p className="font-outfit text-sm sm:text-base md:text-lg lg:text-[20px] text-black">
-                HR sees anonymous stress-reduction scores and productivity
-                lift—updated monthly.
+                Track anonymous, real-time analytics: See monthly improvements
+                in stress reduction, financial confidence, and employee
+                productivity—while protecting privacy at every step.
               </p>
             </div>
             <div className="w-full lg:flex-1 h-[180px] sm:h-[200px] md:h-[220px] lg:h-[240px] rounded-[100px] sm:rounded-[200px] md:rounded-[300px] lg:rounded-[384px] overflow-hidden">
