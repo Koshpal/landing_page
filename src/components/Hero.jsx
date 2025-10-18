@@ -233,9 +233,9 @@ export default function Hero() {
                 className="relative cursor-pointer"
               >
                 <motion.img
-                  src="/assets/phone-mock.png"
+                  src="/hero-right.png"
                   alt="Koshpal App Preview"
-                  className="w-[220px] sm:w-[260px] md:w-[280px] lg:w-[300px] xl:w-[320px]"
+                  className="w-[280px] sm:w-[340px] md:w-[380px] lg:w-[420px] xl:w-[460px]"
                   style={{
                     filter: 'drop-shadow(0 30px 60px rgba(0, 0, 0, 0.35)) drop-shadow(0 15px 35px rgba(0, 0, 0, 0.25))'
                   }}
