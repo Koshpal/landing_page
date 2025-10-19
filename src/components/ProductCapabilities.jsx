@@ -152,7 +152,7 @@ export default function ProductCapabilities() {
               <img
                 src={feature.image}
                 alt={feature.title}
-                className="rounded-2xl shadow-2xl w-full lg:max-w-[85%] h-auto"
+                className="rounded-2xl  w-full lg:max-w-[85%] h-auto"
               />
             </div>
           </motion.div>

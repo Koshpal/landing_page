@@ -1,11 +1,18 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import ContactPage from './pages/ContactPage'
 import './index.css'
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 )
 
