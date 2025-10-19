@@ -1,8 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 
 export default function ExploreArticles() {
   const scrollRef = useRef(null);
-  const autoScrollRef = useRef(null);
   const [showAll, setShowAll] = useState(false);
 
   const articles = [
@@ -58,58 +57,23 @@ export default function ExploreArticles() {
 
   const displayedArticles = showAll ? articles : articles.slice(0, 3);
 
-  // Auto-scroll functionality
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: -350,
+        behavior: "smooth",
+      });
+    }
+  };
 
-    const startAutoScroll = () => {
-      autoScrollRef.current = setInterval(() => {
-        if (scrollContainer) {
-          const maxScroll =
-            scrollContainer.scrollWidth - scrollContainer.clientWidth;
-          const currentScroll = scrollContainer.scrollLeft;
-
-          // Scroll by one card width (approximately)
-          const scrollAmount = scrollContainer.clientWidth * 0.85;
-
-          if (currentScroll >= maxScroll - 10) {
-            // Reset to beginning
-            scrollContainer.scrollTo({ left: 0, behavior: "smooth" });
-          } else {
-            // Scroll to next card
-            scrollContainer.scrollBy({
-              left: scrollAmount,
-              behavior: "smooth",
-            });
-          }
-        }
-      }, 3000); // Auto-scroll every 3 seconds
-    };
-
-    const stopAutoScroll = () => {
-      if (autoScrollRef.current) {
-        clearInterval(autoScrollRef.current);
-      }
-    };
-
-    // Start auto-scroll
-    startAutoScroll();
-
-    // Pause on hover/touch
-    scrollContainer.addEventListener("mouseenter", stopAutoScroll);
-    scrollContainer.addEventListener("mouseleave", startAutoScroll);
-    scrollContainer.addEventListener("touchstart", stopAutoScroll);
-
-    return () => {
-      stopAutoScroll();
-      if (scrollContainer) {
-        scrollContainer.removeEventListener("mouseenter", stopAutoScroll);
-        scrollContainer.removeEventListener("mouseleave", startAutoScroll);
-        scrollContainer.removeEventListener("touchstart", stopAutoScroll);
-      }
-    };
-  }, []);
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: 350,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <section className="w-full relative bg-[#FAFAFA] flex flex-col items-center py-10 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 gap-8 sm:gap-10 md:gap-12 text-center font-outfit">
@@ -197,6 +161,48 @@ export default function ExploreArticles() {
               </a>
             ))}
           </div>
+        </div>
+
+        {/* Navigation Arrows - Only show on mobile where carousel exists */}
+        <div className="flex sm:hidden justify-center items-center gap-4">
+          <button
+            onClick={scrollLeft}
+            className="w-12 h-12 rounded-full bg-white text-[#334EAC] flex items-center justify-center hover:bg-gray-50 transition-all shadow-lg hover:shadow-xl active:scale-95 border border-gray-200"
+            aria-label="Scroll left"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+          <button
+            onClick={scrollRight}
+            className="w-12 h-12 rounded-full bg-white text-[#334EAC] flex items-center justify-center hover:bg-gray-50 transition-all shadow-lg hover:shadow-xl active:scale-95 border border-gray-200"
+            aria-label="Scroll right"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
         </div>
 
         {/* Explore More Button */}

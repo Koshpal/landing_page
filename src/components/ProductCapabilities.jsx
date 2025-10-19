@@ -40,36 +40,65 @@ export default function ProductCapabilities() {
 
   return (
     <section
-      className="relative overflow-hidden py-20 px-6 md:px-12 lg:px-16"
+      className="relative overflow-hidden flex flex-col items-center justify-center px-6 md:px-12 lg:px-[120px] py-16 md:py-20 lg:py-[90px]"
       style={{
-        background: "linear-gradient(0deg, #ffffff, #334eac)",
+        background: "linear-gradient(180deg, #334eac, #fafafa)",
+        gap: "96px",
       }}
     >
       {/* Top Heading Section */}
-      <div className="max-w-4xl mx-auto text-center mb-24">
-        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white text-sm font-jakarta font-medium mb-8">
+      <div
+        className="w-full max-w-4xl mx-auto text-center flex flex-col items-center justify-center"
+        style={{ gap: "24px" }}
+      >
+        <div
+          className="inline-flex items-center gap-2 px-3 py-2 rounded-[20px] text-[#334eac] font-outfit font-medium shadow-sm border border-[#eff6ff]"
+          style={{
+            backgroundColor: "#eff6ff",
+            fontSize: "18px",
+            boxShadow:
+              "0px 0px 1px rgba(44, 58, 114, 0.05), 0px 2px 6px rgba(44, 58, 114, 0.05), 0px 10px 18px rgba(58, 76, 146, 0.1)",
+          }}
+        >
           <span>✨</span>
-          <span>How we make your money smarter</span>
+          <span>How we make your money smarter?</span>
         </div>
 
-        <h1 className="font-outfit text-white text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6">
-          We turn your spending into smarter financial decisions.
+        <h1
+          className="font-outfit font-semibold leading-tight text-4xl md:text-5xl lg:text-[56px]"
+          style={{
+            color: "#ffffff",
+            lineHeight: "1.3",
+          }}
+        >
+          We turn your spending into smarter financial decisions
         </h1>
 
-        <p className="font-jakarta text-white/80 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+        <p
+          className="font-outfit font-semibold text-base md:text-xl max-w-2xl"
+          style={{
+            color: "#d4e0f5",
+            fontSize: "20px",
+            lineHeight: "28px",
+          }}
+        >
           Koshpal helps you track, budget, and grow your money with real-time
-          insights and a privacy-first approach.
+          insights and a privacy-first approach
         </p>
       </div>
 
       {/* Alternating Features Section */}
-      <div className="max-w-7xl mx-auto space-y-28">
+      <div
+        className="w-full max-w-[1200px] flex flex-col"
+        style={{ gap: "48px" }}
+      >
         {featuresContent.map((feature, index) => (
           <motion.div
             key={index}
-            className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${
+            className={`grid grid-cols-1 lg:grid-cols-2 items-center ${
               index % 2 !== 0 ? "lg:grid-flow-col-dense" : ""
             }`}
+            style={{ gap: "32px" }}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
@@ -77,19 +106,45 @@ export default function ProductCapabilities() {
           >
             {/* Text Content */}
             <div
-              className={`text-white ${
+              className={`flex flex-col items-start ${
                 index % 2 !== 0 ? "lg:col-start-2" : ""
               }`}
+              style={{ gap: "18px" }}
             >
-              <span className="inline-block bg-white/15 text-white text-sm font-semibold px-4 py-2 rounded-full mb-6">
-                {feature.badge}
-              </span>
-              <h2 className="font-outfit text-4xl font-bold leading-snug mb-5">
-                {feature.title}
-              </h2>
-              <p className="font-jakarta text-white/80 text-lg leading-relaxed">
-                {feature.description}
-              </p>
+              <div className="inline-flex items-center justify-center px-6 py-3 rounded-[16.8px] relative overflow-hidden">
+                <div
+                  className="absolute inset-0 rounded-[37px] bg-[#1e1e1e] opacity-[0.08]"
+                  style={{ backdropFilter: "blur(4.5px)" }}
+                />
+                <span
+                  className="relative z-10 font-outfit font-medium text-[#081f5c]"
+                  style={{ fontSize: "24px" }}
+                >
+                  {feature.badge}
+                </span>
+              </div>
+              <div
+                className="flex flex-col items-start"
+                style={{ gap: "16px" }}
+              >
+                <h2
+                  className="font-outfit font-medium leading-snug text-3xl md:text-4xl lg:text-[48px]"
+                  style={{
+                    color: "#000",
+                  }}
+                >
+                  {feature.title}
+                </h2>
+                <p
+                  className="font-outfit font-medium leading-relaxed"
+                  style={{
+                    fontSize: "20px",
+                    color: "#2b2b2b",
+                  }}
+                >
+                  {feature.description}
+                </p>
+              </div>
             </div>
 
             {/* Image */}
