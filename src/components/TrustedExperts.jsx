@@ -49,7 +49,6 @@ const CardShape = ({ shape, position, size, color, opacity }) => {
 
 export default function TrustedExperts() {
   const scrollRef = useRef(null);
-  const autoScrollRef = useRef(null);
   const [flippedCards, setFlippedCards] = useState({});
   const [isTouchDevice, setIsTouchDevice] = useState(false);
 
@@ -60,15 +59,15 @@ export default function TrustedExperts() {
 
   const experts = [
     {
-      name: "Mark Adam",
-      title: "Chartered Accountant",
-      image: "/assets/Adam.png",
+      name: "CA Prajvi Nahata",
+      title: "Ex–EY | Proprietor | 4 yrs",
+      image: "/ex1.png",
       bgColor: "bg-[#FDEBEA]",
       badgeColor: "bg-[#F27A7A]",
       textColor: "text-[#D95B5B]",
-      experience: "15+ years",
-      specialization: "Tax Planning & Corporate Finance",
-      bio: "Expert in tax optimization and corporate financial strategies. Helped 500+ clients achieve their financial goals.",
+      experience: "4 years",
+      specialization: "Personal & Corporate Financial Planning",
+      bio: "Expert in personal and corporate financial planning, helping clients track, save, and allocate money effectively.",
       shapes: [
         {
           shape: "circle",
@@ -87,15 +86,15 @@ export default function TrustedExperts() {
       ],
     },
     {
-      name: "Ms. Smitha",
-      title: "Financial Planner",
-      image: "/assets/Smitha.png",
+      name: "CA Pranat Jayaswal",
+      title: "Ex–EY | Grant Thornton | 4 yrs",
+      image: "/ex2.png",
       bgColor: "bg-[#EAF6F0]",
       badgeColor: "bg-[#6CC19A]",
       textColor: "text-[#4A9D7C]",
-      experience: "12+ years",
-      specialization: "Retirement & Investment Planning",
-      bio: "Specializes in creating personalized financial roadmaps. Certified Financial Planner with a passion for empowering individuals.",
+      experience: "4 years",
+      specialization: "Budgeting & Long-term Money Management",
+      bio: "Guides clients with clear, actionable financial advice, focusing on smarter budgeting and long-term money management.",
       shapes: [
         {
           shape: "wave",
@@ -114,15 +113,15 @@ export default function TrustedExperts() {
       ],
     },
     {
-      name: "Dr. Einstein",
-      title: "Financial Coach",
-      image: "/assets/Einstein.png",
+      name: "CA Abhineet Modh",
+      title: "BDO | Assistant Manager | 4 yrs",
+      image: "/ex3.png",
       bgColor: "bg-[#FFF3E5]",
       badgeColor: "bg-[#F5A623]",
       textColor: "text-[#D98200]",
-      experience: "20+ years",
-      specialization: "Wealth Management & Portfolio Strategy",
-      bio: "Renowned for innovative wealth building strategies. PhD in Economics with extensive experience in portfolio optimization.",
+      experience: "4 years",
+      specialization: "Financial Planning & Budgeting Strategies",
+      bio: "Specializes in financial planning and budgeting strategies to help individuals and businesses manage money efficiently.",
       shapes: [
         {
           shape: "circle",
@@ -141,15 +140,15 @@ export default function TrustedExperts() {
       ],
     },
     {
-      name: "Priya Sharma",
-      title: "Chartered Accountant",
-      image: "/assets/Priya.png",
+      name: "CA Pankaj Jhajhuka",
+      title: "EY | Assistant Manager | 4 yrs",
+      image: "/ex4.png",
       bgColor: "bg-[#E9EFFF]",
       badgeColor: "bg-[#4A72FF]",
       textColor: "text-[#3B5AD9]",
-      experience: "10+ years",
-      specialization: "Personal Finance & Budget Planning",
-      bio: "Passionate about financial literacy and helping young professionals build wealth. Expert in budgeting and debt management.",
+      experience: "4 years",
+      specialization: "Financial Structure & Budget Optimization",
+      bio: "Helps structure finances and optimize budgets for both individuals and businesses, ensuring sustainable financial growth.",
       shapes: [
         {
           shape: "bar",
@@ -200,56 +199,23 @@ export default function TrustedExperts() {
     }
   };
 
-  // Auto-scroll functionality - only on desktop
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer || isTouchDevice) return; // Skip auto-scroll on touch devices
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: -300,
+        behavior: "smooth",
+      });
+    }
+  };
 
-    const startAutoScroll = () => {
-      autoScrollRef.current = setInterval(() => {
-        if (scrollContainer) {
-          const maxScroll =
-            scrollContainer.scrollWidth - scrollContainer.clientWidth;
-          const currentScroll = scrollContainer.scrollLeft;
-
-          // Scroll by one card width (approximately)
-          const scrollAmount = scrollContainer.clientWidth * 0.8;
-
-          if (currentScroll >= maxScroll - 10) {
-            // Reset to beginning
-            scrollContainer.scrollTo({ left: 0, behavior: "smooth" });
-          } else {
-            // Scroll to next card
-            scrollContainer.scrollBy({
-              left: scrollAmount,
-              behavior: "smooth",
-            });
-          }
-        }
-      }, 3000); // Auto-scroll every 3 seconds
-    };
-
-    const stopAutoScroll = () => {
-      if (autoScrollRef.current) {
-        clearInterval(autoScrollRef.current);
-      }
-    };
-
-    // Start auto-scroll (only on desktop)
-    startAutoScroll();
-
-    // Pause on hover
-    scrollContainer.addEventListener("mouseenter", stopAutoScroll);
-    scrollContainer.addEventListener("mouseleave", startAutoScroll);
-
-    return () => {
-      stopAutoScroll();
-      if (scrollContainer) {
-        scrollContainer.removeEventListener("mouseenter", stopAutoScroll);
-        scrollContainer.removeEventListener("mouseleave", startAutoScroll);
-      }
-    };
-  }, [isTouchDevice]);
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: 300,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <section className="py-20 md:py-24 bg-white overflow-x-hidden">
@@ -271,7 +237,7 @@ export default function TrustedExperts() {
           {experts.map((expert) => (
             <div
               key={expert.name}
-              className="flex-shrink-0 w-[80vw] sm:w-[calc(50%-0.75rem)] md:w-[calc(50%-1rem)] lg:w-[240px] min-h-[380px] lg:h-[420px] snap-center transition-transform duration-300 ease-out lg:hover:scale-105"
+              className="flex-shrink-0 w-[80vw] sm:w-[calc(50%-0.75rem)] md:w-[calc(50%-1rem)] lg:w-[240px] h-[480px] sm:h-[450px] lg:h-[500px] snap-center transition-transform duration-300 ease-out lg:hover:scale-105"
               style={{ perspective: "1000px" }}
               onMouseEnter={() => handleMouseEnter(expert.name)}
               onMouseLeave={() => handleMouseLeave(expert.name)}
@@ -292,7 +258,7 @@ export default function TrustedExperts() {
               >
                 {/* Front of Card */}
                 <div
-                  className={`${expert.bgColor} rounded-3xl p-6 text-center flex flex-col overflow-hidden w-full h-full absolute`}
+                  className={`${expert.bgColor} rounded-3xl text-center flex flex-col overflow-hidden w-full h-full absolute`}
                   style={{
                     backfaceVisibility: "hidden",
                     WebkitBackfaceVisibility: "hidden",
@@ -303,27 +269,29 @@ export default function TrustedExperts() {
                     <CardShape key={i} {...s} />
                   ))}
 
-                  <div className="relative z-10 flex flex-col flex-grow overflow-hidden">
+                  {/* Text content positioned absolutely at top */}
+                  <div className="absolute top-0 left-0 right-0 z-10 pt-4 sm:pt-5 lg:pt-6 px-4 sm:px-5 lg:px-6">
                     <div className="flex-shrink-0">
-                      <h3 className="font-bold text-2xl text-slate-800">
+                      <h3 className="font-bold text-lg sm:text-xl lg:text-2xl text-slate-800">
                         {expert.name}
                       </h3>
                       <div
-                        className={`mt-3 inline-block ${expert.badgeColor} rounded-full px-4 py-1`}
+                        className={`mt-2 sm:mt-2.5 lg:mt-3 inline-block ${expert.badgeColor} rounded-full px-3 sm:px-3.5 lg:px-4 py-1`}
                       >
-                        <p className="text-sm font-semibold text-white">
+                        <p className="text-xs sm:text-xs lg:text-sm font-semibold text-white">
                           {expert.title}
                         </p>
                       </div>
                     </div>
+                  </div>
 
-                    <div className="flex-grow flex items-end justify-center mt-4 overflow-hidden rounded-t-2xl min-h-[180px]">
-                      <img
-                        src={expert.image}
-                        alt={expert.name}
-                        className="w-full h-full min-h-[180px] object-cover object-top"
-                      />
-                    </div>
+                  {/* Image fills the card from bottom */}
+                  <div className="absolute bottom-0 left-0 right-0 top-[95px] sm:top-[105px] lg:top-[100px] z-0">
+                    <img
+                      src={expert.image}
+                      alt={expert.name}
+                      className="w-full h-full object-cover object-top"
+                    />
                   </div>
 
                   {/* Hint - only show on touch devices */}
@@ -417,6 +385,48 @@ export default function TrustedExperts() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Navigation Arrows - Only show on mobile/tablet where carousel exists */}
+        <div className="flex lg:hidden justify-center items-center gap-4 mt-8">
+          <button
+            onClick={scrollLeft}
+            className="w-12 h-12 rounded-full bg-white text-[#334EAC] flex items-center justify-center hover:bg-gray-50 transition-all shadow-lg hover:shadow-xl hover:scale-110 active:scale-95 border border-gray-200"
+            aria-label="Scroll left"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+          <button
+            onClick={scrollRight}
+            className="w-12 h-12 rounded-full bg-white text-[#334EAC] flex items-center justify-center hover:bg-gray-50 transition-all shadow-lg hover:shadow-xl hover:scale-110 active:scale-95 border border-gray-200"
+            aria-label="Scroll right"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </section>

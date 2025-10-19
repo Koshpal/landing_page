@@ -90,7 +90,7 @@ export default function TrustStats() {
           {/* Stat 1 */}
           <div className="w-full flex flex-col items-center gap-2">
             <AnimatedCounter 
-              end="10" 
+              end="11" 
               suffix="+" 
               duration={1200}
               className="text-5xl sm:text-6xl md:text-7xl lg:text-[94px] leading-[110%] font-extrabold text-[#17a2b8] font-outfit"
@@ -106,7 +106,7 @@ export default function TrustStats() {
           {/* Stat 2 */}
           <div className="w-full flex flex-col items-center gap-2">
             <AnimatedCounter 
-              end="12" 
+              end="3" 
               suffix="+" 
               duration={1200}
               className="text-5xl sm:text-6xl md:text-7xl lg:text-[94px] leading-[110%] font-extrabold text-[#17a2b8] font-outfit"
@@ -122,7 +122,7 @@ export default function TrustStats() {
           {/* Stat 3 */}
           <div className="w-full flex flex-col items-center gap-2">
             <AnimatedCounter 
-              end="236" 
+              end="153" 
               suffix="" 
               duration={1500}
               className="text-5xl sm:text-6xl md:text-7xl lg:text-[94px] leading-[110%] font-medium text-[#17a2b8] font-outfit"

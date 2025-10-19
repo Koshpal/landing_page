@@ -6,8 +6,20 @@ const features = [
     desc: "No bank-login required—privacy preserved by SMS parsing",
     iconBg: "bg-blue-100",
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-blue-600">
-        <path d="M12 2l4 4v6a4 4 0 0 1-4 4 4 4 0 0 1-4-4V6l4-4z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        className="text-blue-600"
+      >
+        <path
+          d="M12 2l4 4v6a4 4 0 0 1-4 4 4 4 0 0 1-4-4V6l4-4z"
+          stroke="currentColor"
+          strokeWidth="1.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </svg>
     ),
   },
@@ -16,8 +28,20 @@ const features = [
     desc: "Auto-capture UPI transaction SMS so you never miss a payment log",
     iconBg: "bg-green-100",
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-green-600">
-        <path d="M3 12h3l3 8 4-16 3 8h4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        className="text-green-600"
+      >
+        <path
+          d="M3 12h3l3 8 4-16 3 8h4"
+          stroke="currentColor"
+          strokeWidth="1.4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </svg>
     ),
   },
@@ -26,8 +50,20 @@ const features = [
     desc: "Human coaching plus smart tools in one subscription",
     iconBg: "bg-purple-100",
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-purple-600">
-        <path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zM2 22c0-3.5 4-6 10-6s10 2.5 10 6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        className="text-purple-600"
+      >
+        <path
+          d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zM2 22c0-3.5 4-6 10-6s10 2.5 10 6"
+          stroke="currentColor"
+          strokeWidth="1.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </svg>
     ),
   },
@@ -36,8 +72,20 @@ const features = [
     desc: "Employer dashboard proves ROI on productivity & retention",
     iconBg: "bg-orange-100",
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-orange-600">
-        <path d="M3 17h18M6 12l4 4 8-8" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        className="text-orange-600"
+      >
+        <path
+          d="M3 17h18M6 12l4 4 8-8"
+          stroke="currentColor"
+          strokeWidth="1.4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </svg>
     ),
   },
@@ -51,7 +99,8 @@ export default function Features() {
           What Makes Us Different?
         </h2>
         <p className="text-slate-500 mt-3 max-w-2xl mx-auto">
-          We turn your spending into smarter financial decisions with privacy-first technology and expert human guidance.
+          We turn your spending into smarter financial decisions with
+          privacy-first technology and expert human guidance.
         </p>
 
         {/* feature cards */}
@@ -62,7 +111,9 @@ export default function Features() {
               className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-transform duration-200"
             >
               <div className="flex flex-col items-center text-center">
-                <div className={`w-12 h-12 rounded-md flex items-center justify-center ${f.iconBg}`}>
+                <div
+                  className={`w-12 h-12 rounded-md flex items-center justify-center ${f.iconBg}`}
+                >
                   {f.icon}
                 </div>
                 <h3 className="mt-4 font-semibold text-slate-900 text-lg">
