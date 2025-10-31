@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function CardsSection() {
   return (
-    <section className="py-20 px-6 md:px-12" style={{ background: 'linear-gradient(180deg, #E8EAF6 0%, #C5CAE9 100%)' }}>
+    <section className="py-20 px-6 md:px-12" style={{ background: 'linear-gradient(180deg, #fff 0%, #334EAC 100%)' }}>
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-16">

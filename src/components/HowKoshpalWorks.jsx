@@ -2,7 +2,7 @@ import React from "react";
 
 export default function HowKoshpalWorks() {
   return (
-    <section className="w-full bg-[#FAFAFA] flex flex-col items-center py-12 md:py-16 lg:py-[90px] px-4 sm:px-6 md:px-12 lg:px-[120px] text-center">
+    <section className="w-full bg-[#fff] flex flex-col items-center py-12 md:py-16 lg:py-[90px] px-4 sm:px-6 md:px-12 lg:px-[120px] text-center">
       <div className="w-full max-w-[1200px]">
         {/* Top Badge and Heading */}
         <div className="flex flex-col items-center justify-center gap-4 md:gap-6 mb-8 md:mb-12">
@@ -65,7 +65,7 @@ export default function HowKoshpalWorks() {
             </div>
             <div className="w-full lg:flex-1 h-[180px] sm:h-[200px] md:h-[220px] lg:h-[240px] rounded-[100px] sm:rounded-[200px] md:rounded-[300px] lg:rounded-[384px] overflow-hidden">
               <img
-                src="/step1.jpg"
+                src="/work1.png"
                 alt="Create step"
                 className="w-full h-full object-cover"
               />
@@ -107,7 +107,7 @@ export default function HowKoshpalWorks() {
             </div>
             <div className="w-full lg:flex-1 h-[180px] sm:h-[200px] md:h-[220px] lg:h-[240px] rounded-[100px] sm:rounded-[200px] md:rounded-[300px] lg:rounded-[384px] overflow-hidden">
               <img
-                src="/step2.png"
+                src="/work2.png"
                 alt="Engage step"
                 className="w-full h-full object-cover"
               />
@@ -149,7 +149,7 @@ export default function HowKoshpalWorks() {
             </div>
             <div className="w-full lg:flex-1 h-[180px] sm:h-[200px] md:h-[220px] lg:h-[240px] rounded-[100px] sm:rounded-[200px] md:rounded-[300px] lg:rounded-[384px] overflow-hidden">
               <img
-                src="/step3.png"
+                src="/work3.png"
                 alt="Analyze step"
                 className="w-full h-full object-cover"
               />

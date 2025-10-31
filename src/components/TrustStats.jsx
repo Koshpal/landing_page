@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 
 // Counter component with animation
-const AnimatedCounter = ({ end, duration = 1200, suffix = "", className }) => {
+const AnimatedCounter = ({ end, duration = 1200, suffix = "", className, style }) => {
   const [count, setCount] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
   const counterRef = useRef(null);
@@ -11,27 +11,27 @@ const AnimatedCounter = ({ end, duration = 1200, suffix = "", className }) => {
       (entries) => {
         if (entries[0].isIntersecting && !hasAnimated) {
           setHasAnimated(true);
-          
+
           const startTime = Date.now();
           const endValue = parseInt(end);
-          
+
           const animate = () => {
             const now = Date.now();
             const progress = Math.min((now - startTime) / duration, 1);
-            
+
             // Easing function for smooth animation
             const easeOutQuart = 1 - Math.pow(1 - progress, 4);
             const current = Math.floor(easeOutQuart * endValue);
-            
+
             setCount(current);
-            
+
             if (progress < 1) {
               requestAnimationFrame(animate);
             } else {
               setCount(endValue);
             }
           };
-          
+
           animate();
         }
       },
@@ -50,7 +50,7 @@ const AnimatedCounter = ({ end, duration = 1200, suffix = "", className }) => {
   }, [end, duration, hasAnimated]);
 
   return (
-    <div ref={counterRef} className={className}>
+    <div ref={counterRef} className={className} style={style}>
       {count}{suffix}
     </div>
   );
@@ -58,12 +58,11 @@ const AnimatedCounter = ({ end, duration = 1200, suffix = "", className }) => {
 
 export default function TrustStats() {
   return (
-    <section className="w-full bg-[#fafafa] flex flex-col items-center justify-center py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28 gap-8 md:gap-10 lg:gap-12 text-center">
+    <section className="w-full bg-gradient-to-b from-[#5484D6] from-20% to-[#334EAC] flex flex-col items-center justify-center py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28 gap-8 md:gap-10 lg:gap-12 text-center">
       {/* Intro paragraph */}
-      <div className="w-full max-w-[1200px] text-base sm:text-lg md:text-xl leading-[140%] font-semibold font-jakarta text-[#383838] px-2">
-        Unlock invaluable wisdom personalized for you in our top-notch podcast.
-        Dive into episodes designed to deliver relevant insights that cater to
-        your interests and needs.
+      <div className="w-full max-w-[1200px] text-base sm:text-lg md:text-xl leading-[140%] font-semibold font-jakarta text-white px-2" style={{ color: '#ffffff' }}>
+        Help employees take better control of their personal finances with tailored guidance and advice.
+        Adding Financial Coaching to your  can go a long way toward building a more confident, productive team.
       </div>
 
       {/* Main container: Video + Stats */}
@@ -89,13 +88,14 @@ export default function TrustStats() {
         <div className="w-full lg:w-[301px] flex flex-col items-start gap-4 lg:gap-[13px]">
           {/* Stat 1 */}
           <div className="w-full flex flex-col items-center gap-2">
-            <AnimatedCounter 
-              end="11" 
-              suffix="+" 
+            <AnimatedCounter
+              end="11"
+              suffix="+"
               duration={1200}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-[94px] leading-[110%] font-extrabold text-[#17a2b8] font-outfit"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-[94px] leading-[110%] font-extrabold text-white font-outfit"
+              style={{ color: '#ffffff' }}
             />
-            <div className="text-base sm:text-lg md:text-xl lg:text-[18px] leading-[160%] font-semibold font-jakarta text-[#383838]">
+            <div style={{ color: '#ffffff' }} className="text-base sm:text-lg md:text-xl lg:text-[18px] leading-[160%] font-semibold font-jakarta text-white">
               qualified coaches onboard
             </div>
           </div>
@@ -105,13 +105,14 @@ export default function TrustStats() {
 
           {/* Stat 2 */}
           <div className="w-full flex flex-col items-center gap-2">
-            <AnimatedCounter 
-              end="3" 
-              suffix="+" 
+            <AnimatedCounter
+              end="3"
+              suffix="+"
               duration={1200}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-[94px] leading-[110%] font-extrabold text-[#17a2b8] font-outfit"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-[94px] leading-[110%] font-extrabold text-white font-outfit"
+              style={{ color: '#ffffff' }}
             />
-            <div className="text-base sm:text-lg md:text-xl lg:text-[20px] leading-[160%] font-semibold font-jakarta text-[#383838] text-center">
+            <div style={{ color: '#ffffff' }} className="text-base sm:text-lg md:text-xl lg:text-[20px] leading-[160%] font-semibold font-jakarta text-white text-center">
               industries consulted
             </div>
           </div>
@@ -121,13 +122,14 @@ export default function TrustStats() {
 
           {/* Stat 3 */}
           <div className="w-full flex flex-col items-center gap-2">
-            <AnimatedCounter 
-              end="153" 
-              suffix="" 
+            <AnimatedCounter
+              end="153"
+              suffix=""
               duration={1500}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-[94px] leading-[110%] font-medium text-[#17a2b8] font-outfit"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-[94px] leading-[110%] font-medium text-white font-outfit"
+              style={{ color: '#ffffff' }}
             />
-            <div className="text-base sm:text-lg md:text-xl lg:text-[20px] leading-[160%] font-semibold font-jakarta text-[#383838] text-center">
+            <div style={{ color: '#ffffff' }} className="text-base sm:text-lg md:text-xl lg:text-[20px] leading-[160%] font-semibold font-jakarta text-white text-center">
               <p className="m-0">coaching hours delivered</p>
               <p className="m-0">in pilot phase</p>
             </div>

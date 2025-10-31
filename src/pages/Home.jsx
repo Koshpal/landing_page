@@ -1,6 +1,8 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
+import FinancialWellness from "../components/FinancialWellness";
+import EmployeeFinancialHealth from "../components/EmployeeFinancialHealth";
 import TrustedExperts from "../components/TrustedExperts";
 import WhatMakesUsDifferent from "../components/WhatMakesUsDifferent";
 import About from "../components/About";
@@ -24,16 +26,31 @@ export default function Home() {
         {/* Hero Section */}
         <Hero />
 
+        {/* Financial Wellness Section */}
+        <FinancialWellness />
+
+        {/* Employee Financial Health Section */}
+        <EmployeeFinancialHealth />
+
         {/* What Makes Us Different? */}
         <WhatMakesUsDifferent />
 
         {/* About */}
         <div id="about">
-          <About />
+          {/* <About /> */}
         </div>
 
         {/* Stats */}
         <TrustStats />
+
+        {/* How it works Section */}
+        <div id="how-it-works">
+          <HowKoshpalWorks />
+        </div>
+
+         {/* Advisor Section */}
+        <TrustedExperts />
+
 
         {/* Additional Features Section */}
         <div id="what-we-do">
@@ -41,27 +58,24 @@ export default function Home() {
         </div>
 
         {/* Know your money */}
-        <KnowYourMoney />
+        {/* <KnowYourMoney /> */}
 
-        {/* Advisor Section */}
-        <TrustedExperts />
+       
 
-        {/* How it works Section */}
-        <div id="how-it-works">
-          <HowKoshpalWorks />
-        </div>
 
         {/* Cards Section */}
         <CardsSection />
+
+         {/* FAQ Section */}
+        <div id="faq">
+          <FAQ />
+        </div>
 
         {/* Form Section */}
         <div id="contact">
           <ContactForm />
         </div>
-        {/* FAQ Section */}
-        <div id="faq">
-          <FAQ />
-        </div>
+       
 
         {/* Article Section */}
         <div id="resources">
