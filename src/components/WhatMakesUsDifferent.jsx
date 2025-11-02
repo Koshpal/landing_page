@@ -25,9 +25,9 @@ export default function WhatMakesUsDifferent() {
       iconColor: "text-blue-600",
     },
     {
-      title: "Human + AI Coaching",
+      title: "Real-time Insights",
       description:
-        "Smart algorithms combined with certified financial advisors for personalized guidance.",
+        "Auto-capture UPI transaction SMS so you never miss a payment log.",
       icon: (
         <svg
           className="w-8 h-8"
@@ -47,9 +47,9 @@ export default function WhatMakesUsDifferent() {
       iconColor: "text-green-600",
     },
     {
-      title: "India-Specific Solutions",
+      title: "Expert Guidance",
       description:
-        "Tailored for Indian financial landscape with UPI, tax laws, and local investment options.",
+        "Human coaching plus smart tools in one subscription.",
       icon: (
         <svg
           className="w-8 h-8"
@@ -69,9 +69,9 @@ export default function WhatMakesUsDifferent() {
       iconColor: "text-purple-600",
     },
     {
-      title: "Proven ROI",
+      title: "ROI Tracking",
       description:
-        "Employer dashboard shows measurable impact on employee productivity and retention.",
+        "Employer dashboard proves ROI on productivity & retention.",
       icon: (
         <svg
           className="w-8 h-8"

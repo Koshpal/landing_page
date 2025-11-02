@@ -6,32 +6,32 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: "What is Koshpal, and who is it for?",
-      answer: "Koshpal is a personal finance app designed to help everyday users track their spending, understand their money habits, and gain financial clarity. Whether you are a student, working professional, freelancer, or homemaker, Koshpal is built for anyone who wants to manage their finances better without stress."
+      question: "What is Koshpal?",
+      answer: "Koshpal is a personal finance app that helps you track your UPI and cash payments, set budgets, get real time alerts, and understand your spending through easy-to-read visual insights."
     },
     {
       question: "Do I need to link my bank account to use Koshpal?",
-      answer: "No, you don't need to link your bank account. Koshpal allows you to manually track your expenses and income, giving you full control over your financial data."
+      answer: "No. Koshpal works without linking your bank account. We use privacy first methods like SMS  parsing to track transactions securely."
     },
     {
-      question: "Can I track both UPI and cash transactions on Koshpal?",
-      answer: "Yes, Koshpal supports tracking both UPI and cash transactions, making it easy to monitor all your spending in one place."
+      question: "Is Koshpal safe to use?",
+      answer: "Yes! Koshpal prioritises your privacy and security. We never store any personal details or sensitive financial information. The app only processes UPI notifications to give you insights into your transaction history."
     },
     {
-      question: "What is Chowscore?",
-      answer: "Chowscore is a unique feature that rates your financial health based on your spending patterns and savings habits."
+      question: "Do I need to provide any personal information to use Koshpal?",
+      answer: "No, Koshpal doesn’t require any personal information. It only needs access to your UPI notification history to track and display your payment details."
     },
     {
-      question: "What is Service fee?",
-      answer: "Service fee is a small charge for using premium features of Koshpal to help maintain and improve the app."
+      question: "Can I track payments from multiple UPI accounts?",
+      answer: "Yes! Koshpal supports tracking payments across all your UPI accounts in one place, making it easy to manage and view transactions from different sources."
     },
     {
-      question: "Why do we charge Service fee?",
-      answer: "We charge a service fee to ensure we can continue providing high-quality features, security, and customer support."
+      question: "Will Koshpal remind me if I am about to overspend?",
+      answer: "Yes. Koshpal sends smart alerts when you are close to or exceed your set budgets, helping you stay in control of your spending."
     },
     {
-      question: "What is Surge fee?",
-      answer: "Surge fee is an additional charge during peak usage times to maintain optimal app performance."
+      question: "Will Koshpal sync with my bank or payment apps?",
+      answer: "Koshpal does not sync with your bank or payment apps. It only reads UPI notifications that you receive on your phone, ensuring that your financial data remains secure"
     }
   ];
 

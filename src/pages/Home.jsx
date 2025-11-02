@@ -35,11 +35,6 @@ export default function Home() {
         {/* What Makes Us Different? */}
         <WhatMakesUsDifferent />
 
-        {/* About */}
-        <div id="about">
-          {/* <About /> */}
-        </div>
-
         {/* Stats */}
         <TrustStats />
 
