@@ -77,7 +77,7 @@ export default function TrustStats() {
             playsInline
           >
             <source
-              src="/4836232_Laptop_Credit_1920x1080.mp4"
+              src="/video.mp4"
               type="video/mp4"
             />
             Your browser does not support the video tag.
