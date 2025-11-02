@@ -1,113 +1,158 @@
 import React from "react";
+import { Link, useLocation } from 'react-router-dom'
 
 export default function Footer() {
+  const location = useLocation()
+  const isHomePage = location.pathname === '/'
+
+  const smoothScrollTo = (id) => {
+    const el = document.getElementById(id)
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
   return (
-    <footer className="px-6 sm:px-10 md:px-16 lg:px-28 pt-12 sm:pt-16 md:pt-20 lg:pt-24 pb-8 md:pb-12 lg:pb-16 bg-gradient-to-b from-neutral-50 to-primary border border-black flex flex-col justify-center items-center gap-12 md:gap-20 lg:gap-32 overflow-hidden">
-      {/* Top Section */}
-      <div className="w-full max-w-[1200px] flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 lg:gap-8">
-        {/* Left: CTA Section */}
-        <div className="flex flex-col justify-start items-start gap-4 md:gap-6 w-full lg:w-auto">
-          <h2 className="text-[#262626] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium font-outfit leading-tight sm:leading-snug md:leading-[68px] lg:leading-[78px] tracking-wide md:tracking-wider">
-            Empower Your Team's <br className="hidden sm:block" />
-            Financial Wellness
-          </h2>
-          <button 
-            onClick={() => {
-              const el = document.getElementById('contact');
-              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    <footer
+      className="px-4 sm:px-6 md:px-12 lg:px-20 py-8 sm:py-12 md:py-16"
+      style={{
+        // smooth transition from light to mid-blue to dark-blue
+        background: 'linear-gradient(180deg, #fafafa 0%, #334EAC 60%, #081F5C 100%)',
+      }}
+    >
+      {/* CTA Section */}
+      <div className="max-w-7xl mx-auto mb-12 sm:mb-16 md:mb-20">
+        <div className="relative bg-gradient-to-b to-[#334EAC] from-[#32437D] rounded-3xl sm:rounded-[32px] px-6 sm:px-10 md:px-16 lg:px-20 py-8 sm:py-12 md:py-16 overflow-hidden">
+          <div
+            aria-hidden="true"
+            className="absolute left-0 right-0 top-0 pointer-events-none"
+            style={{
+              // overlay limited to top portion so grid appears only over the lighter shade
+              height: '75%',
+              backgroundImage:
+                'linear-gradient(to right, rgba(255,255,255,0.14) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.14) 1px, transparent 1px)',
+              backgroundSize: '60px 60px',
+              opacity: 1,
+              // fade the bottom edge of the overlay so it disappears into the darker shade
+              maskImage: 'linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)',
+              WebkitMaskImage: 'linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)',
             }}
-            className="px-6 sm:px-8 py-3 sm:py-4 bg-primary rounded-[100px] shadow-[0px_0px_2px_0px_rgba(0,71,179,1.00)] border-2 border-primary-lightest flex justify-center items-center gap-2 hover:bg-primary-darkest hover:scale-105 hover:shadow-[0px_8px_24px_0px_rgba(51,78,172,0.4)] transition-all duration-300 ease-in-out active:scale-95 cursor-pointer"
-          >
-            <span className="text-center text-white-darkest text-lg sm:text-xl md:text-2xl font-medium font-outfit">
-              Request a Demo
-            </span>
-          </button>
-        </div>
+          />
 
-        {/* Right: Contact Info */}
-        <div className="w-full lg:w-96 flex flex-col justify-start items-start gap-3 md:gap-4">
-          {/* Email */}
-          <a href="mailto:koshpal@koshpal.com" className="self-stretch flex justify-start items-center gap-2.5 group cursor-pointer">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 p-2.5 sm:p-3.5 bg-blue-500 rounded-[10px] flex justify-center items-center gap-2.5 overflow-hidden transition-all duration-300 group-hover:bg-primary group-hover:scale-110 group-hover:shadow-lg flex-shrink-0">
-              <img
-                src="/assets/material-symbols_mail.svg"
-                alt="Email"
-                className="w-5 h-5 sm:w-7 sm:h-7"
-              />
-            </div>
-            <span className="flex-1 text-[#1a1a1a] text-base sm:text-lg md:text-xl lg:text-2xl font-normal font-outfit transition-colors group-hover:text-primary break-all sm:break-normal">
-              koshpal@koshpal.com
-            </span>
-          </a>
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center">
+            <h2 style={{ 'color': "#fff" }} className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold font-outfit text-center lg:text-left">
+              Ready to work with us
+            </h2>
 
-          {/* LinkedIn */}
-          <a href="https://www.linkedin.com/company/koshpal" target="_blank" rel="noopener noreferrer" className="self-stretch flex justify-start items-center gap-2.5 group cursor-pointer">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 p-2.5 sm:p-3.5 bg-blue-500 rounded-[10px] flex justify-center items-center overflow-hidden transition-all duration-300 group-hover:bg-primary group-hover:scale-110 group-hover:shadow-lg flex-shrink-0">
-              <img
-                src="/assets/ri_linkedin-fill.svg"
-                alt="LinkedIn"
-                className="w-5 h-5 sm:w-7 sm:h-7"
-              />
+            <div className="flex justify-center lg:justify-end">
+              <button
+                onClick={() => {
+                  const el = document.getElementById('contact');
+                  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
+                className='bg-[#334EAC] text-lg px-4 py-2 font-outfit mt-4 rounded-full hover:bg-[#5B7FDB] transition-all duration-300 ease-in-out border-2 border-[#fff]'
+                style={{ color: "#fff" }}
+              >
+                Request a Demo
+              </button>
             </div>
-            <span className="flex-1 text-[#1a1a1a] text-base sm:text-lg md:text-xl lg:text-2xl font-normal font-outfit transition-colors group-hover:text-primary">
-              Linkedin
-            </span>
-          </a>
-
-          {/* Phone */}
-          <a className="self-stretch flex justify-start items-center gap-2.5 group cursor-pointer">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 p-2.5 sm:p-3.5 bg-blue-500 rounded-[10px] flex justify-center items-center gap-2.5 overflow-hidden transition-all duration-300 group-hover:bg-primary group-hover:scale-110 group-hover:shadow-lg flex-shrink-0">
-              <img
-                src="/assets/bxs_phone.svg"
-                alt="Phone"
-                className="w-5 h-5 sm:w-7 sm:h-7"
-              />
-            </div>
-            <span className="flex-1 text-[#1a1a1a] text-base sm:text-lg md:text-xl lg:text-2xl font-normal font-outfit opacity-95 transition-colors group-hover:text-primary group-hover:opacity-100">
-              +91 9983444740
-            </span>
-          </a>
+          </div>
         </div>
       </div>
 
-      {/* Bottom Section */}
-      <div className="w-full max-w-[1200px] flex flex-col justify-center items-center gap-4 md:gap-6">
-        {/* Logo and Nav Links */}
-        <div className="flex flex-col md:flex-row justify-between items-center w-full gap-6 md:gap-4">
-          <img
-            src="/assets/logo_footer.png"
-            alt="Koshpal Logo"
-            className="h-14 sm:h-16 md:h-20 object-contain"
-          />
-          <div className="flex flex-wrap justify-center md:justify-start items-center gap-4 sm:gap-6 md:gap-8 lg:gap-16">
-            {["Home", "About", "Project", "Feedback", "Blog", "Contact"].map(
-              (link) => (
-                <a
-                  key={link}
-                  href="#"
-                  className="text-white-darkest text-sm sm:text-base md:text-lg lg:text-xl font-normal font-jakarta tracking-tight hover:scale-110 hover:text-primary-lightest transition-all duration-300 ease-in-out"
-                >
-                  {link}
-                </a>
-              )
-            )}
+      {/* Main Footer Content */}
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 md:gap-12 lg:gap-16 mb-12">
+          {/* Brand Section (40%) */}
+          <div className="lg:col-span-2 w-full">
+            <div className="flex items-center gap-2 mb-4">
+              <img
+              src="/assets/logo-removebg.png"
+              alt="Koshpal"
+              className="h-[36px] sm:h-[42px] md:h-[50px] w-auto cursor-pointer"
+            />
+              <h3 style={{'color':'#fff'}} className="text-white text-2xl font-bold font-outfit">Koshpal</h3>
+            </div>
+            <p style={{'color':'#fff'}} className="text-white/90 text-sm font-jakarta leading-relaxed">
+              Koshpal provides an all-in-one financial management platform designed for businesses. From real-time expense tracking and automated budgeting to analytics and seamless integrations, we equip teams with the tools and insights they need to manage finances efficiently and scale with confidence.
+            </p>
+          </div>
+
+          {/* Navigation */}
+          <div className="lg:col-span-1">
+            <h4 style={{'color':'#fff'}} className="text-white text-lg font-semibold font-outfit mb-4">Navigation</h4>
+            <ul  style={{'color':'#fff'}} className="space-y-2.5">
+              {[
+                { label: 'About', id: 'about' },
+                { label: 'What we do', id: 'what-we-do' },
+                { label: 'Finance experts', id: 'finance-experts' },
+                { label: 'How we work', id: 'how-it-works' },
+                { label: 'Contact us', id: 'contact', isPage: true },
+              ].map((item) => (
+                <li style={{'color':'#fff'}} key={item.label}>
+                  {item.isPage ? (
+                    <Link to="/contact" className="text-white/90 text-sm font-jakarta transition-colors">
+                      Contact us
+                    </Link>
+                  ) : isHomePage ? (
+                    <a style={{'color':'#fff'}} href={`#${item.id}`} onClick={(e) => { e.preventDefault(); smoothScrollTo(item.id); }} className="text-white/90 text-sm font-jakarta transition-colors">
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link to={`/#${item.id}`} className="text-white/90 text-sm font-jakarta  transition-colors">
+                      {item.label}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Licence */}
+          <div className="lg:col-span-1">
+            <h4 style={{'color':'#fff'}} className="text-white text-lg font-semibold font-outfit mb-4">Licence</h4>
+            <ul style={{'color':'#fff'}} className="space-y-2.5">
+              {["Privacy policy", "Terms of services"].map((item) => (
+                <li key={item}>
+                  <a href="#" className="text-white/90 text-sm font-jakarta hover:text-primary transition-colors">
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div className="lg:col-span-1">
+            <h4 style={{'color':'#fff'}} className="text-white text-lg font-semibold font-outfit mb-4">Contact</h4>
+            <ul className="space-y-2.5">
+              <li className="flex items-center gap-2">
+                <svg style={{'color':'#fff'}}className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                </svg>
+                <span style={{'color':'#fff'}} className="text-white/90 text-sm font-jakarta">+91 9983444740</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <svg style={{'color':'#fff'}} className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                </svg>
+                <span style={{'color':'#fff'}} className="text-white/90 text-sm font-jakarta">koshpal@koshpal.com</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <svg style={{'color':'#fff'}} className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+                <a style={{'color':'#fff'}} href="https://www.linkedin.com/company/koshpal/" className="text-white/90 text-sm font-jakarta">Linkedin</a>
+              </li>
+            </ul>
           </div>
         </div>
 
         {/* Divider */}
-        <div className="w-full h-0 border-t border-slate-400/80"></div>
+        <div className="border-t border-white/20 mb-6"></div>
 
         {/* Copyright */}
-        <p className="text-center text-white-darkest text-xs sm:text-sm md:text-base font-normal font-jakarta leading-relaxed md:leading-loose tracking-tight px-2">
-          © 2025 Koshpal. All rights reserved
-          <span className="hidden sm:inline">
-            &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-          </span>
-          <br className="sm:hidden" />
-          <span className="text-xs sm:text-sm md:text-base">
-            Cookie Settings, Anti-Spam, Privacy, User agreement, Legal Notice
-            and Responsible Disclosure
-          </span>
+        <p style={{'color':'#fff'}} className="text-center text-white/80 text-xs sm:text-sm font-jakarta">
+          © 2025 Koshpal. All rights reserved | Cookie Settings, Anti-Spam, Privacy, User agreement, Legal Notice and Responsible Disclosure
         </p>
       </div>
     </footer>

@@ -58,13 +58,13 @@ export default function Navbar(){
           {/* right: CTA */}
           <div className="hidden lg:block">
             {isHomePage ? (
-              <button 
-                onClick={(e) => { e.preventDefault(); smoothScrollTo('contact'); }}
+              <Link 
+                to="/demo"
                 className="bg-primary text-white font-bold font-jakarta px-4 xl:px-6 py-2 xl:py-2.5 text-sm xl:text-base rounded-full shadow-md hover:bg-primary-darkest transition-all cursor-pointer whitespace-nowrap"
                 style={{ color: '#FFFFFF' }}
               >
                 Request a Demo
-              </button>
+              </Link>
             ) : (
               <Link 
                 to="/contact"

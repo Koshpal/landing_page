@@ -57,12 +57,6 @@ export default function Home() {
           <ProductCapabilities />
         </div>
 
-        {/* Know your money */}
-        {/* <KnowYourMoney /> */}
-
-       
-
-
         {/* Cards Section */}
         <CardsSection />
 
