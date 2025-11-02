@@ -82,7 +82,7 @@ export default function ProductCapabilities() {
             lineHeight: "28px",
           }}
         >
-          Koshpal helps you track, budget, and grow your money with real-time
+          Koshpal helps you track, budget, and manage your money with real-time
           insights and a privacy-first approach
         </p>
       </div>

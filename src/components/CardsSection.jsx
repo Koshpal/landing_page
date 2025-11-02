@@ -10,7 +10,7 @@ export default function CardsSection() {
             Build your <span className="text-primary">Financial</span> clarity
           </h1>
           <p className="font-jakarta text-grey-dark text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
-            Simplify how you track, plan, and grow your money, all in one app.
+            Simplify how you track, plan, and manage your money, all in one app.
             <br />
             Your money deserves better control. Let's start today.
           </p>
