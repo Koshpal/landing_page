@@ -204,7 +204,7 @@ export default function DemoPage() {
               </form>
             </div>
 
-            <div className="bg-gradient-to-br from-[#334EAC] to-[#4A5FC1] rounded-3xl shadow-lg p-8 md:p-10 text-white relative overflow-hidden min-h-[600px] flex flex-col">
+            <div className="bg-[#2B8997] rounded-3xl shadow-lg p-8 md:p-10 text-white relative overflow-hidden min-h-[800px] flex flex-col">
               <div className="space-y-6 mb-auto">
                 <div className="flex items-center gap-4 group cursor-pointer">
                   <div className="p-4 rounded-2xl group-hover:shadow-lg transition-all" style={{ backgroundColor: 'rgba(157, 176, 240, 0.4)' }}>

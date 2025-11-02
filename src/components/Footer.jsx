@@ -43,7 +43,7 @@ export default function Footer() {
             </h2>
 
             <div className="flex justify-center lg:justify-end">
-              <button
+              <Link to="/demo"
                 onClick={() => {
                   const el = document.getElementById('contact');
                   if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -52,7 +52,7 @@ export default function Footer() {
                 style={{ color: "#fff" }}
               >
                 Request a Demo
-              </button>
+              </Link>
             </div>
           </div>
         </div>

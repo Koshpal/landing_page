@@ -57,7 +57,7 @@ export default function Navbar(){
 
           {/* right: CTA */}
           <div className="hidden lg:block">
-            {isHomePage ? (
+            {isHomePage && (
               <Link 
                 to="/demo"
                 className="bg-primary text-white font-bold font-jakarta px-4 xl:px-6 py-2 xl:py-2.5 text-sm xl:text-base rounded-full shadow-md hover:bg-primary-darkest transition-all cursor-pointer whitespace-nowrap"
@@ -65,15 +65,17 @@ export default function Navbar(){
               >
                 Request a Demo
               </Link>
-            ) : (
-              <Link 
-                to="/contact"
-                className="bg-primary text-white font-bold font-jakarta px-4 xl:px-6 py-2 xl:py-2.5 text-sm xl:text-base rounded-full shadow-md hover:bg-primary-darkest transition-all cursor-pointer whitespace-nowrap inline-block"
-                style={{ color: '#FFFFFF' }}
-              >
-                Get Started
-              </Link>
-            )}
+            ) 
+            // : (
+            //   <Link 
+            //     to="/contact"
+            //     className="bg-primary text-white font-bold font-jakarta px-4 xl:px-6 py-2 xl:py-2.5 text-sm xl:text-base rounded-full shadow-md hover:bg-primary-darkest transition-all cursor-pointer whitespace-nowrap inline-block"
+            //     style={{ color: '#FFFFFF' }}
+            //   >
+            //     Get Started
+            //   </Link>
+            // )
+            }
           </div>
 
           {/* mobile menu button */}
@@ -120,15 +122,17 @@ export default function Navbar(){
             )}
             <Link to="/contact" className="block font-jakarta font-medium text-base hover:text-primary transition cursor-pointer py-2 touch-manipulation" onClick={() => setOpen(false)}>Contact Us</Link>
             <div className="pt-3">
-              {isHomePage ? (
+              {isHomePage && (
                 <button onClick={(e) => { e.preventDefault(); smoothScrollTo('contact'); }} className="w-full bg-primary text-white font-jakarta font-semibold px-4 py-3 text-base rounded-full hover:bg-primary-darkest transition-all cursor-pointer touch-manipulation" style={{ color: '#FFFFFF' }}>
                   Request a Demo
                 </button>
-              ) : (
-                <Link to="/contact" onClick={() => setOpen(false)} className="block w-full bg-primary text-white font-jakarta font-semibold px-4 py-3 text-base rounded-full hover:bg-primary-darkest transition-all cursor-pointer touch-manipulation text-center" style={{ color: '#FFFFFF' }}>
-                  Get Started
-                </Link>
-              )}
+              ) 
+              // : (
+              //   <Link to="/contact" onClick={() => setOpen(false)} className="block w-full bg-primary text-white font-jakarta font-semibold px-4 py-3 text-base rounded-full hover:bg-primary-darkest transition-all cursor-pointer touch-manipulation text-center" style={{ color: '#FFFFFF' }}>
+              //     Get Started
+              //   </Link>
+              // )
+              }
             </div>
         </div>
       </div>

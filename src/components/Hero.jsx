@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -164,8 +165,8 @@ export default function Hero() {
               className="font-outfit text-white text-[28px] leading-[1.2] sm:text-4xl sm:leading-[1.15] md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight"
               style={{ letterSpacing: '-0.02em', color: 'white' }}
             >
-              <span className="block whitespace-nowrap">Empower Your Team's</span>
-              <span className="block whitespace-nowrap">Financial Wellness</span>
+              <span className="block whitespace-nowrap">Financial wellbeing,</span>
+              <span className="block whitespace-nowrap">built for your people</span>
             </motion.h1>
 
             <motion.p
@@ -175,7 +176,7 @@ export default function Hero() {
               className="font-jakarta text-white text-base sm:text-lg md:text-xl lg:text-lg max-w-[540px] leading-[1.6] sm:leading-[1.65] mx-auto lg:mx-0"
               style={{ color: 'white' }}
             >
-              Koshpal delivers privacy-first, automated expense tracking and actionable insights, designed to boost productivity and financial clarity for your workforce.
+              Koshpal delivers privacy first, automated expense tracking and coaching sessions, designed to boost productivity and financial clarity for your workforce.
             </motion.p>
 
             <motion.div
@@ -184,7 +185,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="pt-3 sm:pt-4 md:pt-5 flex justify-center lg:justify-start"
             >
-              <motion.button
+              {/* <motion.button
                 onClick={smoothScrollToContact}
                 whileHover={{ scale: 1.05, backgroundColor: '#ffffff', color: '#334eac' }}
                 whileTap={{ scale: 0.95 }}
@@ -205,9 +206,10 @@ export default function Hero() {
                 >
                   <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="1.8" />
                   <path d="M16 3v4M8 3v4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-                </motion.svg>
-                <span>Book a Demo</span>
-              </motion.button>
+                </motion.svg> */}
+                <Link to="/demo" className='bg-transparent text-lg px-4 py-2 font-outfit mt-4 rounded-full hover:bg-[#5B7FDB] transition-all duration-300 ease-in-out border-2 border-[#fff]'
+                style={{ color: "#fff" }}>Request a Demo</Link>
+              {/* </motion.button> */}
             </motion.div>
           </motion.div>
 

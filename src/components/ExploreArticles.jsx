@@ -145,7 +145,7 @@ export default function ExploreArticles() {
                   {article.tags.map((tag, idx) => (
                     <div
                       key={idx}
-                      className="rounded-[100px] border border-[#334EAC] flex items-center justify-center py-1 sm:py-1.5 md:py-2 px-2.5 sm:px-3 md:px-4 hover:bg-[#334EAC] hover:text-white transition-all duration-300"
+                      className="rounded-[100px] border border-[#334EAC] flex items-center justify-center py-1 sm:py-1.5 md:py-2 px-2.5 sm:px-3 md:px-4 hover:bg-[#999] hover:cursor-pointer hover:text-white transition-all duration-300"
                     >
                       <span className="relative text-[10px] sm:text-xs md:text-[12px]">
                         {tag}
