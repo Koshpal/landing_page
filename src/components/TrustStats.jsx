@@ -68,9 +68,9 @@ export default function TrustStats() {
       {/* Main container: Video + Stats */}
       <div className="w-full max-w-[1203px] flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-5 text-left">
         {/* Left: Video */}
-        <div className="w-full lg:w-[827px] h-[250px] sm:h-[350px] md:h-[450px] lg:h-[514px] rounded-2xl border border-[#cfd0d1] overflow-hidden">
+        <div className="w-full lg:w-[827px] h-[250px] sm:h-[350px] md:h-[450px] lg:h-[514px] rounded-3xl overflow-hidden">
           <video
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
             autoPlay
             loop
             muted
