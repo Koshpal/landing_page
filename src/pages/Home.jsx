@@ -15,6 +15,7 @@ import ContactForm from "../components/ContactForm";
 import ExploreArticles from "../components/ExploreArticles";
 import Footer from "../components/Footer";
 import FAQ from "../components/FAQ";
+import LoginSection from "../components/LoginSection";
 
 export default function Home() {
   return (
@@ -54,6 +55,9 @@ export default function Home() {
 
         {/* Cards Section */}
         <CardsSection />
+
+        {/* Login Section */}
+        <LoginSection />
 
          {/* FAQ Section */}
         <div id="faq">
