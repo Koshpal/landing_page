@@ -55,7 +55,7 @@ export default function FinancialWellness() {
               className="font-outfit text-gray-900 text-2xl sm:text-3xl md:text-[32px] lg:text-[40px] font-medium leading-tight tracking-tight"
               style={{ letterSpacing: '-0.02em' }}
             >
-              Empower your people to tackle every money challenge — and thrive, financially and professionally.
+              Empower your people to tackle every money challenge - and thrive, financially and professionally.
             </motion.h2>
 
             {/* Description */}

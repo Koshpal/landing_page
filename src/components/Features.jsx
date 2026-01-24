@@ -3,7 +3,7 @@ import React from "react";
 const features = [
   {
     title: "Privacy-First Approach",
-    desc: "No bank-login required—privacy preserved by SMS parsing",
+    desc: "No bank-login required - privacy preserved by SMS parsing",
     iconBg: "bg-blue-100",
     icon: (
       <svg

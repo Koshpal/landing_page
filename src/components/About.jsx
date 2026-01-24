@@ -56,7 +56,7 @@ export default function About() {
           <br />
 
           <span className="scroll-animate" style={{ display: "inline-block", marginTop: "0.2rem" }}>
-            India-specific coaching—so your people act with
+            India-specific coaching - so your people act with
           </span>
           <br />
           <span className="scroll-animate" style={{ display: "inline-block" }}>

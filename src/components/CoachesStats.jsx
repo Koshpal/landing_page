@@ -14,12 +14,12 @@ export default function CoachesStats() {
               <br />
               practical, <span className="text-slate-600">India-specific</span> coaching
               <br />
-              —so your people act with confidence, not guesswork.
+              - so your people act with confidence, not guesswork.
             </h2>
 
             <p className="mt-6 text-lg text-slate-600 max-w-2xl">
               Unlock invaluable wisdom personalised for your people in our top-notch
-              podcast and coaching experiences — bite-sized insights and actionable
+              podcast and coaching experiences - bite-sized insights and actionable
               guidance that employees actually follow.
             </p>
           </div>

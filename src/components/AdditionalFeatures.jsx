@@ -75,7 +75,7 @@ export default function AdditionalFeatures() {
               </h3>
 
               <p className="mt-4 text-slate-600 max-w-xl">
-                Dashboards surface the 10% of expenses that drive 90% of leaks — so teams can act on what matters.
+                Dashboards surface the 10% of expenses that drive 90% of leaks - so teams can act on what matters.
               </p>
             </div>
           </div>
@@ -96,7 +96,7 @@ export default function AdditionalFeatures() {
                 Koshpal learns your habits and adjusts in real time.
               </h4>
 
-              <p className="mt-4 text-slate-600 max-w-lg">
+              <p className="mt-4 text-slate-600 whitespace-nowrap">
                 Personalized nudges help teams stay on-budget without micro-management.
               </p>
             </div>

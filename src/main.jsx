@@ -6,6 +6,8 @@ import ContactPage from './pages/ContactPage'
 import DemoPage from './pages/DemoPage'
 import NotFound from './pages/NotFound'
 import LoginPage from './pages/LoginPage'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsOfService from './pages/TermsOfService'
 import ScrollToTop from './components/ScrollToTop'
 import './index.css'
 import VideoWatchPage from './pages/VideoWatch'
@@ -19,6 +21,8 @@ createRoot(document.getElementById('root')).render(
         <Route path="/login" element={<LoginPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/demo" element={<DemoPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/video" element={<VideoWatchPage />} />
       </Routes>

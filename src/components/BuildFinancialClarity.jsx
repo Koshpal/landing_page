@@ -11,7 +11,7 @@ export default function BuildFinancialClarity() {
             </h2>
             <p className="text-lg text-white/90 mb-8 leading-relaxed">
               Our bite-sized insights and smart automation help you stay on top of your finances without the overwhelm. 
-              Track, learn, and grow—all in the time it takes to have your morning coffee.
+              Track, learn, and grow - all in the time it takes to have your morning coffee.
             </p>
             <div className="space-y-4 mb-8">
               {[

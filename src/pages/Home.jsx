@@ -36,6 +36,11 @@ export default function Home() {
         {/* What Makes Us Different? */}
         <WhatMakesUsDifferent />
 
+        {/* About Section */}
+        <div id="about">
+          <About />
+        </div>
+
         {/* Stats */}
         <TrustStats />
 
@@ -45,7 +50,9 @@ export default function Home() {
         </div>
 
          {/* Advisor Section */}
-        <TrustedExperts />
+        <div id="finance-experts">
+          <TrustedExperts />
+        </div>
 
 
         {/* Additional Features Section */}

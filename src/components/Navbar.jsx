@@ -15,13 +15,13 @@ export default function Navbar(){
   };
 
   return (
-    // fixed floating pill  — adjusts spacing from top with top-4
+    // fixed floating pill - adjusts spacing from top with top-4
     <header className="fixed inset-x-0 z-50 pointer-events-none top-2 sm:top-3 md:top-4">
       <div className="max-w-5xl px-3 mx-auto pointer-events-auto sm:px-4 md:px-6">
         {/* outer pill frame (rounded + ring + subtle border) */}
-        <div className="mx-auto rounded-full bg-white/95 backdrop-blur-lg px-3 sm:px-4 md:px-6 flex items-center justify-between shadow-2xl ring-1 ring-grey-lightest border border-white-light h-[56px] sm:h-[64px] md:h-[70px]">
+        <div className="mx-auto rounded-full bg-white/95 backdrop-blur-lg px-3 sm:px-4 md:px-6 flex items-center shadow-2xl ring-1 ring-grey-lightest border border-white-light h-[56px] sm:h-[64px] md:h-[70px]">
           {/* left: logo */}
-          <Link to="/" className="flex items-center h-full gap-2 sm:gap-3">
+          <Link to="/" className="flex items-center h-full gap-2 sm:gap-3 flex-shrink-0">
             {/* larger responsive logo */}
             <img
               src="/assets/koshPal-logo.png"
@@ -31,7 +31,7 @@ export default function Navbar(){
           </Link>
 
           {/* center: nav links (desktop) */}
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-10 text-black-light font-jakarta font-bold px-4 xl:px-6 py-2.5 text-sm xl:text-base">
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-10 text-black-light font-jakarta font-bold px-4 xl:px-6 py-2.5 text-sm xl:text-base flex-1 justify-center ml-4 xl:ml-8">
             {isHomePage ? (
               <a href="#about" onClick={(e) => { e.preventDefault(); smoothScrollTo('about'); }} className="transition cursor-pointer hover:text-primary whitespace-nowrap">About</a>
             ) : (
@@ -49,49 +49,26 @@ export default function Navbar(){
             )}
             </nav>
 
-          <div className="hidden lg:block">
+          {/* right side buttons */}
+          <div className="hidden lg:flex items-center gap-3 xl:gap-4 flex-shrink-0">
             {isHomePage && (
-              <Link 
-                to="/login"
-                className=" bg-primary text-white font-bold font-jakarta px-4 xl:px-6 py-2 xl:py-2.5 text-sm xl:text-base rounded-full shadow-md hover:bg-primary-darkest transition-all cursor-pointer whitespace-nowrap"
-                style={{ color: '#FFFFFF' }}
-              >
-                login
-              </Link>
-            ) 
-            // : (
-            //   <Link 
-            //     to="/contact"
-            //     className="bg-primary text-white font-bold font-jakarta px-4 xl:px-6 py-2 xl:py-2.5 text-sm xl:text-base rounded-full shadow-md hover:bg-primary-darkest transition-all cursor-pointer whitespace-nowrap inline-block"
-            //     style={{ color: '#FFFFFF' }}
-            //   >
-            //     Get Started
-            //   </Link>
-            // )
-            }
-          </div>
-
-          {/* right: CTA */}
-          <div className="hidden lg:block">
-            {isHomePage && (
-              <Link 
-                to="/demo"
-                className="bg-primary text-white font-bold font-jakarta px-4 xl:px-6 py-2 xl:py-2.5 text-sm xl:text-base rounded-full shadow-md hover:bg-primary-darkest transition-all cursor-pointer whitespace-nowrap"
-                style={{ color: '#FFFFFF' }}
-              >
-                Request a Demo
-              </Link>
-            ) 
-            // : (
-            //   <Link 
-            //     to="/contact"
-            //     className="bg-primary text-white font-bold font-jakarta px-4 xl:px-6 py-2 xl:py-2.5 text-sm xl:text-base rounded-full shadow-md hover:bg-primary-darkest transition-all cursor-pointer whitespace-nowrap inline-block"
-            //     style={{ color: '#FFFFFF' }}
-            //   >
-            //     Get Started
-            //   </Link>
-            // )
-            }
+              <>
+                <Link 
+                  to="/login"
+                  className="bg-primary text-white font-bold font-jakarta px-4 xl:px-6 py-2 xl:py-2.5 text-sm xl:text-base rounded-full shadow-md hover:bg-primary-darkest transition-all cursor-pointer whitespace-nowrap"
+                  style={{ color: '#FFFFFF' }}
+                >
+                  login
+                </Link>
+                <Link 
+                  to="/demo"
+                  className="bg-primary text-white font-bold font-jakarta px-4 xl:px-6 py-2 xl:py-2.5 text-sm xl:text-base rounded-full shadow-md hover:bg-primary-darkest transition-all cursor-pointer whitespace-nowrap"
+                  style={{ color: '#FFFFFF' }}
+                >
+                  Request a Demo
+                </Link>
+              </>
+            )}
           </div>
 
           {/* mobile menu button */}

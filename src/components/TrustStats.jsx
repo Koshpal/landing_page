@@ -123,10 +123,10 @@ export default function TrustStats() {
           {/* Stat 3 */}
           <div className="w-full flex flex-col items-center gap-2">
             <AnimatedCounter
-              end="153"
-              suffix=""
+              end="150"
+              suffix="+"
               duration={1500}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-[94px] leading-[110%] font-medium text-white font-outfit"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-[94px] leading-[110%] font-extrabold text-white font-outfit"
               style={{ color: '#ffffff' }}
             />
             <div style={{ color: '#ffffff' }} className="text-base sm:text-lg md:text-xl lg:text-[20px] leading-[160%] font-semibold font-jakarta text-white text-center">

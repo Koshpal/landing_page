@@ -136,7 +136,7 @@ export default function ProductCapabilities() {
                   {feature.title}
                 </h2>
                 <p
-                  className="font-outfit font-medium leading-relaxed"
+                  className="font-outfit font-medium leading-relaxed whitespace-nowrap"
                   style={{
                     fontSize: "20px",
                     color: "#2b2b2b",
