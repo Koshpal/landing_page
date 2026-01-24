@@ -272,7 +272,7 @@ export default function TrustedExperts() {
                   {/* Text content positioned absolutely at top */}
                   <div className="absolute top-0 left-0 right-0 z-10 pt-4 sm:pt-5 lg:pt-6 px-4 sm:px-5 lg:px-6">
                     <div className="flex-shrink-0">
-                      <h3 className="font-bold text-lg sm:text-xl lg:text-2xl text-slate-800">
+                      <h3 className="p-1 font-bold text-lg sm:text-xl lg:text-2xl text-slate-800">
                         {expert.name}
                       </h3>
                       <div

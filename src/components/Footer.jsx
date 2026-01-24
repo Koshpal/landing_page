@@ -182,7 +182,7 @@ export default function Footer() {
               <img
               src="/assets/logo-removebg.png"
               alt="Koshpal"
-              className="h-[36px] sm:h-[42px] md:h-[50px] w-auto cursor-pointer"
+              className="h-[36px] sm:h-[42px] md:h-[50px] w-auto "
             />
               <h3 style={{'color':'#fff'}} className="text-white text-2xl font-bold font-outfit">Koshpal</h3>
             </div>

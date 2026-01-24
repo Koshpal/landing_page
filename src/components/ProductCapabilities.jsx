@@ -18,7 +18,7 @@ const featuresContent = [
   },
   {
     badge: "Your personalized money tracker",
-    title: "Koshpal learns your habits and adjusts in real time.",
+    title: "Koshpal learns your habits and adjusts in real-time.",
     description:
       "Personalized nudges help teams stay on-budget without micro-management.",
     image: "/assets/feature-right.png",
