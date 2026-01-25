@@ -11,10 +11,86 @@ const LoginSection = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+
+  // Common email providers that should be blocked
+  const commonEmailProviders = [
+    'gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'live.com',
+    'aol.com', 'icloud.com', 'mail.com', 'protonmail.com', 'zoho.com',
+    'yandex.com', 'gmx.com', 'inbox.com', 'me.com', 'msn.com'
+  ];
+
+  // Validate work email
+  const validateEmail = (email) => {
+    if (!email) {
+      setEmailError('Email is required');
+      return false;
+    }
+    
+    const emailDomain = email.split('@')[1]?.toLowerCase();
+    if (!emailDomain) {
+      setEmailError('Please enter a valid email address');
+      return false;
+    }
+    
+    if (commonEmailProviders.includes(emailDomain)) {
+      setEmailError('Please use your work email address. Personal email providers are not allowed.');
+      return false;
+    }
+    
+    setEmailError('');
+    return true;
+  };
+
+  // Validate password requirements
+  const validatePassword = (password) => {
+    if (!password) {
+      setPasswordError('Password is required');
+      return false;
+    }
+
+    if (password.length < 8) {
+      setPasswordError('Password must be at least 8 characters long');
+      return false;
+    }
+
+    if (!/[A-Z]/.test(password)) {
+      setPasswordError('Password must contain at least one uppercase letter');
+      return false;
+    }
+
+    if (!/[a-z]/.test(password)) {
+      setPasswordError('Password must contain at least one lowercase letter');
+      return false;
+    }
+
+    if (!/[0-9]/.test(password)) {
+      setPasswordError('Password must contain at least one number');
+      return false;
+    }
+
+    if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+      setPasswordError('Password must contain at least one special character');
+      return false;
+    }
+
+    setPasswordError('');
+    return true;
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
+    
+    // Validate email and password
+    const isEmailValid = validateEmail(email);
+    const isPasswordValid = validatePassword(password);
+    
+    if (!isEmailValid || !isPasswordValid) {
+      return;
+    }
+    
     setLoading(true);
 
     try {
@@ -155,7 +231,11 @@ const LoginSection = () => {
                 <input
                   type="email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    if (emailError) setEmailError('');
+                  }}
+                  onBlur={() => validateEmail(email)}
                   className="w-full py-2.5 pl-10 pr-4 rounded-lg focus:outline-none focus:ring-2 transition-colors"
                   style={{
                     fontFamily: 'Plus Jakarta Sans, sans-serif',
@@ -165,22 +245,27 @@ const LoginSection = () => {
                     letterSpacing: '0.01em',
                     color: '#262626',
                     backgroundColor: '#f5f5f5',
-                    border: '1px solid #e0e0e0'
+                    border: emailError ? '1px solid #d5332a' : '1px solid #e0e0e0'
                   }}
                   placeholder="you@company.com"
                   required
                   onFocus={(e) => {
                     e.target.style.backgroundColor = '#ffffff';
-                    e.target.style.borderColor = '#334eac';
-                    e.target.style.boxShadow = '0 0 0 2px rgba(51, 78, 172, 0.1)';
-                  }}
-                  onBlur={(e) => {
-                    e.target.style.backgroundColor = '#f5f5f5';
-                    e.target.style.borderColor = '#e0e0e0';
-                    e.target.style.boxShadow = 'none';
+                    e.target.style.borderColor = emailError ? '#d5332a' : '#334eac';
+                    e.target.style.boxShadow = emailError ? '0 0 0 2px rgba(213, 51, 42, 0.1)' : '0 0 0 2px rgba(51, 78, 172, 0.1)';
                   }}
                 />
               </div>
+              {emailError && (
+                <p style={{ 
+                  fontFamily: 'Plus Jakarta Sans, sans-serif',
+                  fontSize: '12px',
+                  color: '#d5332a',
+                  marginTop: '4px'
+                }}>
+                  {emailError}
+                </p>
+              )}
             </div>
 
             {/* Password Input */}
@@ -204,7 +289,11 @@ const LoginSection = () => {
                 <input
                   type={showPassword ? 'text' : 'password'}
                   value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                    if (passwordError) setPasswordError('');
+                  }}
+                  onBlur={() => validatePassword(password)}
                   className="w-full py-2.5 pl-10 pr-12 rounded-lg focus:outline-none focus:ring-2 transition-colors"
                   style={{
                     fontFamily: 'Plus Jakarta Sans, sans-serif',
@@ -214,19 +303,14 @@ const LoginSection = () => {
                     letterSpacing: '0.01em',
                     color: '#262626',
                     backgroundColor: '#f5f5f5',
-                    border: '1px solid #e0e0e0'
+                    border: passwordError ? '1px solid #d5332a' : '1px solid #e0e0e0'
                   }}
                   placeholder="Enter your password"
                   required
                   onFocus={(e) => {
                     e.target.style.backgroundColor = '#ffffff';
-                    e.target.style.borderColor = '#334eac';
-                    e.target.style.boxShadow = '0 0 0 2px rgba(51, 78, 172, 0.1)';
-                  }}
-                  onBlur={(e) => {
-                    e.target.style.backgroundColor = '#f5f5f5';
-                    e.target.style.borderColor = '#e0e0e0';
-                    e.target.style.boxShadow = 'none';
+                    e.target.style.borderColor = passwordError ? '#d5332a' : '#334eac';
+                    e.target.style.boxShadow = passwordError ? '0 0 0 2px rgba(213, 51, 42, 0.1)' : '0 0 0 2px rgba(51, 78, 172, 0.1)';
                   }}
                 />
                 <button
@@ -238,31 +322,26 @@ const LoginSection = () => {
                   {showPassword ? <EyeOff style={{ width: '18px', height: '18px' }} /> : <Eye style={{ width: '18px', height: '18px' }} />}
                 </button>
               </div>
-            </div>
-
-            {/* Demo Credentials */}
-            <div className="p-3 rounded-lg" style={{ backgroundColor: '#eff1f8' }}>
-              <p style={{ 
-                fontFamily: 'Plus Jakarta Sans, sans-serif',
-                fontWeight: 600,
-                fontSize: '11px',
-                lineHeight: '16px',
-                letterSpacing: '0.02em',
-                color: '#334eac',
-                marginBottom: '4px'
-              }}>
-                DEMO CREDENTIALS
-              </p>
-              <p style={{ 
-                fontFamily: 'Plus Jakarta Sans, sans-serif',
-                fontWeight: 400,
-                fontSize: '12px',
-                lineHeight: '18px',
-                color: '#666666'
-              }}>
-                Email: {role.toLowerCase()}@abc.com<br />
-                Password: password123
-              </p>
+              {passwordError && (
+                <p style={{ 
+                  fontFamily: 'Plus Jakarta Sans, sans-serif',
+                  fontSize: '12px',
+                  color: '#d5332a',
+                  marginTop: '4px'
+                }}>
+                  {passwordError}
+                </p>
+              )}
+              {!passwordError && (
+                <p style={{ 
+                  fontFamily: 'Plus Jakarta Sans, sans-serif',
+                  fontSize: '11px',
+                  color: '#999999',
+                  marginTop: '4px'
+                }}>
+                  Must be at least 8 characters with uppercase, lowercase, number, and special character
+                </p>
+              )}
             </div>
 
             {/* Submit Button */}

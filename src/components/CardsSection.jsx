@@ -57,45 +57,34 @@ export default function CardsSection() {
             />
           </div>
 
-          {/* Card 3: Visual insights (Yellow) - Top Right */}
-          <div className="bg-yellow-100 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all">
-            <div className="w-14 h-14 bg-yellow-500 rounded-2xl flex items-center justify-center mb-6">
+          {/* Card 3: Smart Budgeting (Yellow) - Top Right */}
+          <div className="rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all flex flex-col gap-3.5" style={{ backgroundColor: '#fedfb9' }}>
+            <div className="w-16 h-16 rounded-[20px] bg-orange-400 flex items-center justify-center">
               <svg
-                width="28"
-                height="28"
+                width="32"
+                height="32"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="white"
                 strokeWidth="2"
               >
-                <rect
-                  x="3"
-                  y="3"
-                  width="18"
-                  height="18"
-                  rx="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M9 9h6v6H9z"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <line x1="16" y1="2" x2="16" y2="6" strokeLinecap="round" strokeLinejoin="round"/>
+                <line x1="8" y1="2" x2="8" y2="6" strokeLinecap="round" strokeLinejoin="round"/>
+                <line x1="3" y1="10" x2="21" y2="10" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </div>
-            <h3 className="font-outfit text-xl font-bold text-black mb-4">
-              Visual insights
+            <h3 className="font-outfit text-2xl font-medium text-black">
+              Smart Budgeting
             </h3>
-            <p className="font-jakarta text-black text-sm leading-relaxed">
-              See your money, clearly. We turn your spending into beautiful
-              charts and smart summaries
+            <p className="font-jakarta text-[#141414] text-lg leading-relaxed">
+              Set budgets easily and track spending in real time as Koshpal updates your limits automatically, helping you stay financially disciplined every day.
             </p>
           </div>
 
-          {/* Card 4: Track your finances (Green) - Bottom Left */}
-          <div className="bg-green-100 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all">
-            <div className="w-14 h-14 bg-green-400 rounded-2xl flex items-center justify-center mb-6">
+          {/* Card 4: Visual insights (Cream/Beige) - Bottom Left */}
+          <div className="rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all" style={{ backgroundColor: '#E8EBCC' }}>
+            <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style={{ backgroundColor: '#9DB0A0' }}>
               <svg
                 width="28"
                 height="28"
@@ -110,18 +99,17 @@ export default function CardsSection() {
                   strokeLinejoin="round"
                 />
                 <path
-                  d="M18 17V9M13 17v-6M8 17v-3"
+                  d="M7 16v-4M12 16v-8M17 16v-6"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
               </svg>
             </div>
             <h3 className="font-outfit text-xl font-bold text-black mb-4">
-              Track your finances
+              Visual insights
             </h3>
             <p className="font-jakarta text-black text-sm leading-relaxed">
-              We auto-capture UPI transaction SMS so you never miss a payment
-              log. Just tag the category, no typing needed.
+              See your money, clearly. We turn your spending into beautiful charts and smart summaries
             </p>
           </div>
 

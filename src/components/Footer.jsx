@@ -269,9 +269,22 @@ export default function Footer() {
         <div className="border-t border-white/20 mb-6"></div>
 
         {/* Copyright */}
-        <p style={{'color':'#fff'}} className="text-center text-white/80 text-xs sm:text-sm font-jakarta">
-          © 2025 Koshpal. All rights reserved | Cookie Settings, Anti-Spam, Privacy, User agreement, Legal Notice and Responsible Disclosure
-        </p>
+        <div className="flex justify-center">
+          <p 
+            style={{
+              color: '#fff',
+              fontSize: '16px',
+              letterSpacing: '0.02em',
+              lineHeight: '30px',
+              fontFamily: 'Inter, sans-serif',
+              textAlign: 'center',
+              display: 'inline-block',
+              maxWidth: '1098px'
+            }}
+          >
+            © 2025 Koshpal. All rights reserved.<br/> Cookie Settings · Anti-Spam · Privacy Policy · User Agreement · Legal Notice · Responsible Disclosure
+          </p>
+        </div>
       </div>
     </footer>
   );
