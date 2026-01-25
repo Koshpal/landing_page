@@ -96,7 +96,7 @@ export default function AdditionalFeatures() {
                 Koshpal learns your habits and adjusts in real time.
               </h4>
 
-              <p className="mt-4 text-slate-600 whitespace-nowrap">
+              <p className="mt-4 text-slate-600">
                 Personalized nudges help teams stay on-budget without micro-management.
               </p>
             </div>

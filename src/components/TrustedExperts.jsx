@@ -287,7 +287,7 @@ export default function TrustedExperts() {
 
                   {/* Image fills the card from bottom */}
                   <div
-                    className={`absolute bottom-0 left-0 right-0 z-0 ${
+                    className={`absolute bottom-0 left-0 right-0 z-0 flex items-end justify-center ${
                       expert.image === "/ex1.png"
                         ? "top-[50px] sm:top-[60px] lg:top-[55px]"
                         : "top-[95px] sm:top-[105px] lg:top-[100px]"
@@ -296,7 +296,7 @@ export default function TrustedExperts() {
                     <img
                       src={expert.image}
                       alt={expert.name}
-                      className="w-full h-full object-cover object-top"
+                      className="max-w-full max-h-full w-auto h-auto object-contain"
                     />
                   </div>
 

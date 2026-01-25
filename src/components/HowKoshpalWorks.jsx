@@ -2,7 +2,7 @@ import React from "react";
 
 export default function HowKoshpalWorks() {
   return (
-    <section className=" mr-10 -ml-10 w-full bg-[#fff] flex flex-col items-center py-12 md:py-16 lg:py-[90px] px-4 sm:px-6 md:px-12 lg:px-[120px] text-center ">
+    <section className="w-full bg-[#fff] flex flex-col items-center py-12 md:py-16 lg:py-[90px] px-4 sm:px-6 md:px-12 lg:px-[120px] text-center">
       <div className="w-full max-w-[1200px]">
         {/* Top Badge and Heading */}
         <div className="flex flex-col items-center justify-center gap-4 md:gap-6 mb-8 md:mb-12">
@@ -39,7 +39,7 @@ export default function HowKoshpalWorks() {
               <div className="font-outfit text-lg sm:text-xl md:text-2xl lg:text-[28px] font-medium text-black">
                 Step 1
               </div>
-              <h2 className="font-outfit text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-semibold text-[#334EAC] leading-tight whitespace-nowrap">
+              <h2 className="font-outfit text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-semibold text-[#334EAC] leading-tight lg:whitespace-nowrap">
                 Set Up Instantly
               </h2>
               <p className="font-outfit text-sm sm:text-base md:text-lg lg:text-[20px] text-black">
@@ -66,7 +66,7 @@ export default function HowKoshpalWorks() {
               <div className="font-outfit text-lg sm:text-xl md:text-2xl lg:text-[28px] font-medium text-black">
                 Step 2
               </div>
-              <h2 className="font-outfit text-2xl sm:text-3xl md:text-4xl lg:text-[48px] xl:text-[56px] font-semibold text-[#334EAC] leading-tight whitespace-nowrap">
+              <h2 className="font-outfit text-2xl sm:text-3xl md:text-4xl lg:text-[48px] xl:text-[56px] font-semibold text-[#334EAC] leading-tight lg:whitespace-nowrap">
                 Engage Every Employee
               </h2>
               <p className="font-outfit text-sm sm:text-base md:text-lg lg:text-[20px] text-black">
@@ -93,7 +93,7 @@ export default function HowKoshpalWorks() {
               <div className="font-outfit text-lg sm:text-xl md:text-2xl lg:text-[28px] font-medium text-black">
                 Step 3
               </div>
-              <h2 className="font-outfit text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-semibold text-[#334EAC] leading-tight whitespace-nowrap">
+              <h2 className="font-outfit text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-semibold text-[#334EAC] leading-tight lg:whitespace-nowrap">
                 Drive Measurable Impact
               </h2>
               <p className="font-outfit text-sm sm:text-base md:text-lg lg:text-[20px] text-black">

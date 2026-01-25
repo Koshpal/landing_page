@@ -15,9 +15,9 @@ export default function Navbar(){
   };
 
   return (
-    // fixed floating pill - adjusts spacing from top with top-4
-    <header className="fixed inset-x-0 z-50 pointer-events-none top-2 sm:top-3 md:top-4">
-      <div className="max-w-6xl px-3 mx-auto pointer-events-auto sm:px-4 md:px-6">
+    // fixed floating pill - adjusts spacing from top with padding
+    <header className="fixed inset-x-0 top-0 z-50 pointer-events-none">
+      <div className="max-w-6xl px-3 mx-auto pointer-events-auto sm:px-4 md:px-6 pt-2 sm:pt-3 md:pt-4">
         {/* outer pill frame (rounded + ring + subtle border) */}
         <div className="mx-auto rounded-full bg-white/95 backdrop-blur-lg px-4 sm:px-5 md:px-6 flex items-center justify-between shadow-2xl ring-1 ring-grey-lightest border border-white-light h-[56px] sm:h-[64px] md:h-[70px]">
           {/* left: logo */}
