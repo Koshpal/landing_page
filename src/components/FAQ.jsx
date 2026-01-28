@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Settings } from "lucide-react";
+import { Settings, Star } from "lucide-react";
 
 const FAQ = () => {
   const [selectedQuestion, setSelectedQuestion] = useState(0);
@@ -85,12 +85,10 @@ const FAQ = () => {
                   >
                     {faq.question}
                   </span>
-                  <img
-                    src="/svg.png"
-                    alt=""
-                    className={`flex-shrink-0 transition-all duration-500 ${
+                  <Star
+                    className={`flex-shrink-0 transition-all duration-500 w-5 h-5 sm:w-6 sm:h-6 ${
                       selectedQuestion === index
-                        ? "opacity-100 rotate-0 scale-100"
+                        ? "opacity-100 rotate-0 scale-100 text-[#17A2B8] fill-[#17A2B8]"
                         : "opacity-0 rotate-90 scale-0"
                     }`}
                   />
@@ -105,10 +103,8 @@ const FAQ = () => {
               Ans.
             </h3>
             <div className="bg-gray-100 rounded-lg p-6 sm:p-8 min-h-[300px] md:min-h-[400px] relative overflow-hidden">
-              <img
-                src="/svg.png"
-                alt=""
-                className="w-6 h-6 sm:w-8 sm:h-8 mb-4 md:mb-6 brightness-0 transition-transform duration-500 hover:rotate-180"
+              <Star
+                className="w-6 h-6 sm:w-8 sm:h-8 mb-4 md:mb-6 transition-transform duration-500 hover:rotate-180 text-[#17A2B8] fill-[#17A2B8]"
               />
               <p
                 key={selectedQuestion}
