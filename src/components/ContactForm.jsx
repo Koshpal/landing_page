@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import React, { useState, useEffect, useRef } from 'react';
+import { Link } from "react-router-dom";
+import React, { useState, useEffect, useRef } from "react";
 
 export default function ContactForm() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -9,7 +9,7 @@ export default function ContactForm() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     const gridSize = 60;
     let particles = [];
 
@@ -19,7 +19,7 @@ export default function ContactForm() {
       canvas.height = window.innerHeight;
     };
     resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener("resize", resizeCanvas);
 
     // Create grid particles
     const initParticles = () => {
@@ -36,7 +36,7 @@ export default function ContactForm() {
             offsetX: 0,
             offsetY: 0,
             targetOffsetX: 0,
-            targetOffsetY: 0
+            targetOffsetY: 0,
           });
         }
       }
@@ -47,7 +47,7 @@ export default function ContactForm() {
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      particles.forEach(particle => {
+      particles.forEach((particle) => {
         const dx = mousePos.x - particle.baseX;
         const dy = mousePos.y - particle.baseY;
         const distance = Math.sqrt(dx * dx + dy * dy);
@@ -55,10 +55,10 @@ export default function ContactForm() {
 
         if (distance < maxDistance) {
           const intensity = 1 - distance / maxDistance;
-          
+
           // Heavy fade out effect
           particle.targetOpacity = Math.max(0, 0.25 * (distance / maxDistance));
-          
+
           // Heavy pixelated/distortion effect
           const distortionStrength = intensity * 45;
           particle.targetOffsetX = (Math.random() - 0.5) * distortionStrength;
@@ -82,7 +82,7 @@ export default function ContactForm() {
         const lineOpacity = particle.opacity;
         ctx.strokeStyle = `rgba(255, 255, 255, ${lineOpacity})`;
         ctx.lineWidth = 1.5;
-        
+
         // Horizontal line
         ctx.beginPath();
         ctx.moveTo(drawX, drawY);
@@ -94,7 +94,7 @@ export default function ContactForm() {
         ctx.moveTo(drawX, drawY);
         ctx.lineTo(drawX, drawY + gridSize);
         ctx.stroke();
-        
+
         // Add extra visual effect - draw small dots at intersections
         if (distance < maxDistance) {
           const dotSize = (1 - distance / maxDistance) * 3;
@@ -110,7 +110,7 @@ export default function ContactForm() {
     animate();
 
     return () => {
-      window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener("resize", resizeCanvas);
     };
   }, [mousePos]);
 
@@ -118,13 +118,13 @@ export default function ContactForm() {
     const rect = e.currentTarget.getBoundingClientRect();
     setMousePos({
       x: e.clientX - rect.left,
-      y: e.clientY - rect.top
+      y: e.clientY - rect.top,
     });
   };
 
   return (
-    <div 
-      className='relative overflow-hidden bg-gradient-to-b from-[#5484D6] to-[#334EAC] px-4 py-8'
+    <div
+      className="relative overflow-hidden bg-gradient-to-b from-[#5484D6] to-[#334EAC] px-4 py-8"
       onMouseMove={handleMouseMove}
     >
       {/* Interactive Grid Canvas */}
@@ -133,24 +133,35 @@ export default function ContactForm() {
         className="absolute inset-0 pointer-events-none"
       />
 
-      <div className='mx-auto lg:mx-[81px] flex flex-col lg:flex-row items-center justify-center gap-8 max-h-[300px] relative z-10'>
+      <div className="mx-auto lg:mx-[81px] flex flex-col lg:flex-row items-center justify-center gap-8 max-h-[300px] relative z-10">
         {/* left */}
-        <div className='w-full lg:w-1/2'>
-            <h1 className='text-3xl font-outfit font-bold text-[#fff]'>Explore endless possibilities with Koshpal</h1>
-            <p className='text-lg font-jakarta font-normal text-[#fff] mt-4 mb-4'>Explore what money clarity feels like with Koshpal. Manage bills, track shared expenses, and grow smarter with tailored insights and advisory tools - built just for you.</p>
-            <Link  to="/demo"
-              className='bg-[#334EAC] text-white px-4 py-2 font-outfit mt-4 rounded-full hover:bg-[#5B7FDB] transition-all duration-300 ease-in-out border-2 border-[#fff]'
-              style={{color: "#fff", marginTop: '1rem'}}
-            >Request a Demo</Link>
+        <div className="w-full lg:w-1/2">
+          <h1 className="text-3xl font-outfit font-bold text-[#fff]">
+            Explore endless possibilities with Koshpal
+          </h1>
+          <p className="text-lg font-jakarta font-normal text-[#fff] mt-4 mb-4">
+            Explore what money clarity feels like with Koshpal. Manage bills,
+            track shared expenses, and grow smarter with tailored insights and
+            advisory tools - built just for you.
+          </p>
+          <Link
+            to="/demo"
+            className="bg-[#334EAC] text-white px-4 py-2 font-outfit mt-4 rounded-full hover:bg-[#5B7FDB] transition-all duration-300 ease-in-out border-2 border-[#fff]"
+            style={{ color: "#fff", marginTop: "1rem" }}
+          >
+            Request a Demo
+          </Link>
         </div>
         {/* right */}
-        <div className='hidden lg:flex w-full lg:w-1/2 items-end justify-end'>
-            <img src="phone20.png" alt="" className='w-full h-auto object-contain' style={{marginBottom: '1rem'}} />
+        <div className="hidden lg:flex w-full lg:w-1/2 items-end justify-end">
+          <img
+            src="phone20.png"
+            alt=""
+            className="w-full h-auto object-contain"
+            style={{ marginBottom: "1rem" }}
+          />
         </div>
-
       </div>
     </div>
   );
 }
-
-

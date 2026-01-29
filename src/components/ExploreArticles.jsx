@@ -152,9 +152,9 @@ export default function ExploreArticles() {
                     {article.tags.map((tag, idx) => (
                       <div
                         key={idx}
-                        className="rounded-[100px] border border-[#334EAC] flex items-center justify-center py-1 sm:py-1.5 md:py-2 px-2.5 sm:px-3 md:px-4 hover:bg-[#999] hover:cursor-pointer hover:text-white transition-all duration-300"
+                        className="rounded-[100px] border border-[#334EAC] flex items-center justify-center py-1 sm:py-1.5 md:py-2 px-2.5 sm:px-3 md:px-4"
                       >
-                        <span className="relative text-[10px] sm:text-xs md:text-[12px]">
+                        <span className="relative text-[10px] sm:text-xs md:text-[12px] text-center">
                           {tag}
                         </span>
                       </div>
@@ -162,7 +162,7 @@ export default function ExploreArticles() {
                   </div>
 
                   {/* Article Title */}
-                  <h3 className="w-full relative text-lg sm:text-xl md:text-[22px] lg:text-[24px] leading-snug text-[#000] text-left font-normal group-hover:text-[#334EAC] transition-colors duration-300">
+                  <h3 className="w-full relative text-lg sm:text-xl md:text-[22px] lg:text-[24px] leading-snug text-[#000] text-center font-normal group-hover:text-[#334EAC] transition-colors duration-300">
                     {article.title}
                   </h3>
                 </motion.a>
@@ -216,7 +216,7 @@ export default function ExploreArticles() {
         {/* Explore More Button */}
         <motion.button
           onClick={() => setShowAll(!showAll)}
-          className="shadow-[0px_0px_8px_rgba(51,78,172,0.3)] rounded-[100px] bg-[#334EAC] border-2 border-[#334EAC] flex items-center justify-center py-2.5 sm:py-3 md:py-4 px-5 sm:px-6 md:px-8 text-base sm:text-lg md:text-xl lg:text-[24px] text-[#FFFFFF] font-medium hover:bg-[#2743A8] hover:border-[#2743A8] hover:shadow-[0px_0px_16px_rgba(51,78,172,0.5)] hover:scale-105 active:scale-95 transition-all duration-300"
+          className="shadow-[0px_0px_8px_rgba(51,78,172,0.3)] rounded-[100px] bg-[#334EAC] border-2 border-[#334EAC] flex items-center justify-center py-2.5 sm:py-3 md:py-4 px-5 sm:px-6 md:px-8 text-base sm:text-lg md:text-xl lg:text-[24px] text-[#FFFFFF] font-medium active:scale-95 transition-all duration-300"
           whileTap={{ scale: 0.95 }}
           layout
         >

@@ -48,8 +48,7 @@ export default function WhatMakesUsDifferent() {
     },
     {
       title: "Expert Guidance",
-      description:
-        "Human coaching plus smart tools in one subscription.",
+      description: "Human coaching plus smart tools in one subscription.",
       icon: (
         <svg
           className="w-8 h-8"
@@ -70,8 +69,7 @@ export default function WhatMakesUsDifferent() {
     },
     {
       title: "ROI Tracking",
-      description:
-        "Employer dashboard proves ROI on productivity & retention.",
+      description: "Employer dashboard proves ROI on productivity & retention.",
       icon: (
         <svg
           className="w-8 h-8"
@@ -96,10 +94,15 @@ export default function WhatMakesUsDifferent() {
     <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center">
-          <h2 className="text-4xl md:text-4xl font-outfit text-slate-900">
-            What Makes Us Different
+          <h2 className="font-outfit text-3xl sm:text-4xl md:text-5xl lg:text-[56px] leading-tight md:leading-[1.2] lg:leading-[72px] font-semibold">
+            <span className="bg-gradient-to-r from-[#101828] to-[#3A558E] bg-clip-text text-transparent">
+              What Makes Us{" "}
+            </span>
+            <span className="bg-gradient-to-r from-[#334EAC] to-[#17A2B8] bg-clip-text text-transparent">
+              Different
+            </span>
           </h2>
-          <p className="text-slate-600 mt-4 text-lg max-w-2xl mx-auto">
+          <p className="font-jakarta text-sm sm:text-base md:text-lg lg:text-[20px] font-semibold text-[#4A5565] mt-4 max-w-2xl mx-auto">
             We combine cutting-edge technology with human expertise to deliver
             financial wellness that works
           </p>

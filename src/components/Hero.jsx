@@ -189,44 +189,6 @@ export default function Hero() {
               coaching sessions, designed to boost productivity and financial
               clarity for your workforce.
             </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="pt-3 sm:pt-4 md:pt-5 flex justify-center lg:justify-start"
-            >
-              {/* <motion.button
-                onClick={smoothScrollToContact}
-                whileHover={{ scale: 1.05, backgroundColor: '#ffffff', color: '#334eac' }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-2 sm:gap-3 bg-transparent border-2 border-white text-white rounded-full px-6 sm:px-7 md:px-8 py-3 sm:py-3.5 md:py-4 font-jakarta font-semibold text-base sm:text-[15px] md:text-base focus:outline-none focus:ring-4 focus:ring-white/30 transition-colors duration-300 shadow-lg touch-manipulation"
-                aria-label="Book a Demo"
-                style={{ color: 'white' }}
-              >
-                <motion.svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="shrink-0 w-[18px] h-[18px] sm:w-5 sm:h-5"
-                  aria-hidden="true"
-                  animate={{ rotate: [0, 5, -5, 0] }}
-                  transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-                >
-                  <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="1.8" />
-                  <path d="M16 3v4M8 3v4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-                </motion.svg> */}
-              <Link
-                to="/demo"
-                className="bg-transparent text-lg px-4 py-2 font-outfit mt-4 rounded-full hover:bg-[#5B7FDB] transition-all duration-300 ease-in-out border-2 border-[#fff]"
-                style={{ color: "#fff" }}
-              >
-                Request a Demo
-              </Link>
-              {/* </motion.button> */}
-            </motion.div>
           </motion.div>
 
           {/* RIGHT: Phone Mockup */}

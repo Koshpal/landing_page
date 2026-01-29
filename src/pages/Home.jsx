@@ -34,7 +34,9 @@ export default function Home() {
         <EmployeeFinancialHealth />
 
         {/* What Makes Us Different? */}
-        <WhatMakesUsDifferent />
+        <div id="overview">
+          <WhatMakesUsDifferent />
+        </div>
 
         {/* About Section */}
         <div id="about">
@@ -49,11 +51,10 @@ export default function Home() {
           <HowKoshpalWorks />
         </div>
 
-         {/* Advisor Section */}
+        {/* Advisor Section */}
         <div id="finance-experts">
           <TrustedExperts />
         </div>
-
 
         {/* Additional Features Section */}
         <div id="what-we-do">
@@ -63,10 +64,7 @@ export default function Home() {
         {/* Cards Section */}
         <CardsSection />
 
-        {/* Login Section */}
-        <LoginSection />
-
-         {/* FAQ Section */}
+        {/* FAQ Section */}
         <div id="faq">
           <FAQ />
         </div>
@@ -75,7 +73,6 @@ export default function Home() {
         <div id="contact">
           <ContactForm />
         </div>
-       
 
         {/* Article Section */}
         <div id="resources">

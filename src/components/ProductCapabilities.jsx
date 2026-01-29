@@ -7,21 +7,21 @@ const featuresContent = [
     title: "We track your money so you don't have to",
     description:
       "Automatic UPI & SMS categorisation eliminates manual spreadsheets.",
-    image: "/assets/feature-center.png",
+    image: "/assets/feature-left1.png",
   },
   {
     badge: "Your money, Your rules",
     title: "Track what matters, ignore what doesn't.",
     description:
       "Dashboards surface the 10% of expenses that drive 90% of leaks.",
-    image: "/assets/feature-left.png",
+    image: "/assets/feature-center1.png",
   },
   {
     badge: "Your personalized money tracker",
     title: "Koshpal learns your habits and adjusts in real-time.",
     description:
       "Personalized nudges help teams stay on-budget without micro-management.",
-    image: "/assets/feature-right.png",
+    image: "/assets/feature-right1.png",
   },
 ];
 
