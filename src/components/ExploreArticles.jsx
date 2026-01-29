@@ -131,7 +131,7 @@ export default function ExploreArticles() {
                   href={article.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-shrink-0 w-[85vw] sm:w-full sm:flex-shrink max-w-[380px] snap-center shadow-[0.8px_1.2px_38px_rgba(0,0,0,0.15)] rounded-[20px] md:rounded-[24px] bg-[#EFF1F8] flex flex-col items-start p-4 sm:p-5 md:p-6 lg:p-8 gap-3 sm:gap-4 hover:shadow-[0px_8px_50px_rgba(51,78,172,0.25)] sm:hover:scale-[1.02] sm:hover:-translate-y-1 sm:hover:z-10 transition-all duration-300 ease-out cursor-pointer group relative"
+                  className="flex-shrink-0 w-[85vw] sm:w-full sm:flex-shrink max-w-[380px] sm:h-full snap-center shadow-[0.8px_1.2px_38px_rgba(0,0,0,0.15)] rounded-[20px] md:rounded-[24px] bg-[#EFF1F8] flex flex-col items-start p-4 sm:p-5 md:p-6 lg:p-8 gap-3 sm:gap-4 hover:shadow-[0px_8px_50px_rgba(51,78,172,0.25)] sm:hover:scale-[1.02] sm:hover:-translate-y-1 sm:hover:z-10 transition-all duration-300 ease-out cursor-pointer group relative"
                   initial={{ opacity: 0, y: 20, scale: 0.95 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -20, scale: 0.95 }}
@@ -148,7 +148,7 @@ export default function ExploreArticles() {
                   </div>
 
                   {/* Tags Container */}
-                  <div className="w-full flex items-start flex-wrap gap-2 sm:gap-3 md:gap-4">
+                  <div className="w-full flex items-start justify-center flex-wrap gap-2 sm:gap-3 md:gap-4 min-h-[2.5rem] sm:min-h-[3rem]">
                     {article.tags.map((tag, idx) => (
                       <div
                         key={idx}
@@ -162,7 +162,7 @@ export default function ExploreArticles() {
                   </div>
 
                   {/* Article Title */}
-                  <h3 className="w-full relative text-lg sm:text-xl md:text-[22px] lg:text-[24px] leading-snug text-[#000] text-center font-normal group-hover:text-[#334EAC] transition-colors duration-300">
+                  <h3 className="w-full relative text-lg sm:text-xl md:text-[22px] lg:text-[24px] leading-snug text-[#000] text-center font-normal group-hover:text-[#334EAC] transition-colors duration-300 min-h-[3.5rem] sm:min-h-[4rem] md:min-h-[4.5rem] flex items-center justify-center">
                     {article.title}
                   </h3>
                 </motion.a>
